@@ -1,0 +1,123 @@
+# VolatilisOS — GUI edition
+
+A complete windowed **desktop operating system**, written from scratch, that
+boots straight into a 640×480 graphical desktop. It is the graphical branch of
+[VolatilisOS](../volatilisos) — the same hand-written kernel and on-disk
+filesystem underneath, with a desktop inspired by Windows 3.1 and 98 on top:
+overlapping windows, a Start-menu launcher, a mouse pointer, and over twenty
+built-in programs.
+
+Everything you see is drawn by the OS itself, one pixel at a time, in 16 colours.
+There is no graphics library, no widget toolkit, and no code from anyone else —
+the window manager, the fonts, the PNG decoder and every app were written for
+this kernel.
+
+---
+
+## What it is
+
+- **A real desktop.** Draggable windows that you can **resize from any edge or
+  corner** — the pointer changes shape (↔, ↕, ⤡, or a grabbing hand) to show
+  what it is about to do — and that snap to the screen edges. A taskbar with a
+  live clock and a power widget, a searchable Start menu, right-click context
+  menus, and a starfield screensaver when you leave it idle.
+- **Over twenty programs**, each written from scratch and all sharing the same
+  real filesystem: Notes, Terminal, Files, a Calculator, a Clock and a Calendar,
+  a Music Composer, a to-do list (Tasks), a Timer & Stopwatch, and games —
+  Minesweeper, 2048, Tic-Tac-Toe and Chess.
+- **Paint & Video Maker.** Draw pictures and save them as real PNG files, or
+  build stop-motion `.vid` movies frame by frame. Both have a **Select tool**:
+  rubber-band a region, then move it, copy/cut/paste it, **flip** it (H/V) or
+  **rotate** it 90°.
+- **It is online.** A from-scratch network stack (ARP / IP / ICMP / UDP / DHCP /
+  DNS) with a Network app that really pings and looks up names.
+- **Five colour themes** (Blue, Teal, Forest, Rose, Midnight) and an optional
+  **Japanese interface**, with a little romaji input method — type `ka` and get か.
+- **Files persist.** Anything you save lives on the disk image between boots, and
+  a second drive shows up as a removable "USB drive" inside the Files window.
+
+## Who made this, and why
+
+VolatilisOS is written by one person — **VOLATILIS** — as a hobby project.
+
+After building the text-based VolatilisOS kernel, the natural next question was:
+*could one person build the whole graphical desktop too — the windows, the mouse,
+the fonts, the paint program, the games — with no libraries at all, straight on
+top of the same kernel?* This is the answer. It exists for the love of making it,
+and to be a readable example of how a desktop really works, from the raw
+framebuffer all the way up to a window you can drag.
+
+## How to build and run it
+
+You need **NASM**, **Python 3**, **QEMU**, and a 32-bit-capable **GCC**. On Linux
+the host `gcc` works as-is; on macOS you need the `i686-elf` cross-compiler,
+because Apple's clang cannot build 32-bit x86:
+
+```sh
+# macOS toolchain
+brew tap nativeos/i686-elf-toolchain
+brew install i686-elf-binutils i686-elf-gcc nasm qemu
+```
+
+Then build and boot it:
+
+```sh
+make            # build build/kernel.bin
+make run        # boot it in QEMU, straight into the desktop
+```
+
+Other ways to boot it:
+
+```sh
+make iso            # build a bootable GRUB ISO    (then: make run-iso)
+make img            # build a 1.44 MB floppy image (then: make run-img)
+make run-installed  # boot the installed disk on its own, no ISO/GRUB
+make toolchain      # show which compiler/linker was auto-detected
+make help           # list every target
+make clean          # remove build/ (your disk images are kept)
+```
+
+The toolchain is detected automatically on Linux and macOS. Force it either way
+with `make CROSS=i686-elf-` (cross-compiler) or `make CROSS=` (host gcc in 32-bit
+mode). On macOS, `make iso` also needs **Docker**, because `grub-mkrescue` has no
+i386-pc target there.
+
+### First steps once it boots
+
+- Press the **Super (Windows) key**, or click the **▲** button on the taskbar, to
+  open the Start menu. Type to search, then press Enter to open the first match.
+- **Double-click** a desktop icon or a file in Files to open it — a `.png` opens
+  in the Image Viewer, a `.hz` song in the Player, a `.vid` movie in the Video
+  Player, and anything else in Notes.
+- Open **Settings → Personalize** to pick a colour theme or switch the whole
+  desktop into Japanese.
+
+## Source layout
+
+```
+src/
+  desktop.c         the entire GUI: window manager, taskbar, launcher, and
+                    every app — the biggest file in the project
+  gfx.c mouse.c     the drawing routines and the mouse cursor
+  png.c jpeg.c      image decoders (Paint saves real PNGs)
+  font8x16.c        the text-console font
+  font16x16.c       the desktop UI font
+  font16x16_kanji.c the Japanese glyphs for the Japanese interface
+  kernel.c          boot, command dispatch, system setup
+  fs.c realfs.c     the on-disk filesystem
+  fat32.c usbdrive.c reading other computers' FAT disks; the "USB drive"
+  shell.c           the shell behind the Terminal app
+  net.c rtl8139.c   the network stack and the NIC driver
+  disk.c drivers.c  ATA disk, VGA/keyboard/PCI
+  heap.c paging.c   the kernel heap and memory protection
+  task.c elf.c      the scheduler and the ELF loader
+  compiler.c vscript.c  the built-in C interpreter and the Vscript language
+  music.c pong.c snake.c  the PC-speaker synth and a couple of games
+
+boot/               the bootloaders and entry stubs (multiboot + floppy + HDD)
+user/               standalone ring-3 programs (hello.c, count.c, …) + a tiny libc
+include/            the shared kernel headers
+uefi/               an experimental UEFI boot path
+```
+
+VolatilisOS is released under the **MIT License**. Built by VOLATILIS.
