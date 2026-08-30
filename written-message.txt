@@ -59,9 +59,6 @@ My education, my programming skills, my projects, my mistakes, and everything I 
 Maybe one day, years from now, I'll look back at this little project and realize that it was never just an operating system.
 It was the beginning of my way out. The beginning of my independence. The beginning of a future I chose for myself.
 Until then, I will keep learning. I will keep building. I will keep improving. And I will keep moving forward.
-I must leave this country. VolatilisOS is my key. The future is the door. And I'm still building the key. If you are exploring the VolatilisOS Source Code, and stumble upon this folder, you might already saw what I look like next to my Laptop which I called BestFriend,
-And A picture of me with my Pure Linux Desktop Powerhouse Setup in my room while Developing the MBR Bootloader Stage 1
-And a picture of How I see VolatileAI, This might be silly to you, but it means alot to me, and btw, thank you for using and downloading my OS I really appreciate that
-And Don't remind me about that one picture ;)
+I must leave this country. VolatilisOS is my key. The future is the door. And I'm still building the key.
 
 — Chanatun "Volatilis" 23/AUG/2026
