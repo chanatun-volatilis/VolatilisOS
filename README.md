@@ -8,4 +8,4 @@ Links to donwload in itch.io:
 https://volatilis-2033.itch.io/volatilisos-v21
 
 Link to official VolatilisOS website:
-volatilisos.gt.tc
+https://volatilisos.gt.tc/
