@@ -5,5 +5,7 @@ Volatilis Tiktok account:
 https://www.tiktok.com/@alpha300332
 
 Links to donwload in itch.io:
-https://volatilis-2033.itch.io/volatilisos-version-20-iso
-https://volatilis-2033.itch.io/volatilisos-graphical-user-interface-edition-v20
+https://volatilis-2033.itch.io/volatilisos-v21
+
+Link to official VolatilisOS website:
+volatilisos.gt.tc
