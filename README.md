@@ -6,6 +6,3 @@ https://www.tiktok.com/@alpha300332
 
 Links to donwload in itch.io:
 https://volatilis-2033.itch.io/volatilisos-v21
-
-Link to official VolatilisOS website:
-https://volatilisoperatingsystems.gt.tc/
