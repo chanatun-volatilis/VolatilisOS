@@ -1,5 +1,5 @@
 # VolatilisOS
-An operating system created from scratch by a 12 years old student developer in thailand, it features CLI and GUI interface, still under heavy development, ISO files can be downloaded in itch.io volatilis, Demonstration videos in tiktok VOLATILIS, YT account coming soon.
+An operating system created from scratch by me, a young teen who is into Operating Systems and low level memory management programming, this project started when I was 12, (VolatilisOS Source isnt public yet) The development still continues to be active till this day, it features CLI and GUI interface, still under heavy development, ISO files can be downloaded in itch.io volatilis, Demonstration videos in tiktok VOLATILIS, YT account coming soon.
 
 Volatilis Tiktok account:
 https://www.tiktok.com/@alpha300332
