@@ -74,3 +74,34 @@ All screenshots below were taken from these exact ISO files, running in QEMU.
 | ![Desktop](screenshots/desktop.png) The desktop | ![Start menu](screenshots/start-menu.png) Start menu |
 | ![Settings](screenshots/settings.png) The new Settings app | ![Files](screenshots/files.png) Files |
 | ![NetSurf web browser](screenshots/netsurf.png) NetSurf web browser | ![CLI edition](screenshots/cli-edition.png) The CLI edition |
+
+## Showcase
+
+A closer look at the VolatilisOS 2.2 Beta desktop and its built-in apps.
+
+![A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu all open at once](screenshots/showcase/system-monitor-and-terminal.png)
+*A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu, all running at the same time.*
+
+### The desktop and menus
+
+| | |
+| --- | --- |
+| ![Right-click folder menu on the desktop](screenshots/showcase/desktop-folder-menu.png) Right-click the desktop to open any folder straight from a menu | ![Corner menu, Applications > System](screenshots/showcase/start-menu-applications.png) The corner (start) menu with Applications, Places and Settings |
+
+### Settings
+
+| | |
+| --- | --- |
+| ![Settings overview](screenshots/showcase/settings-overview.png) The **Settings** Overview page, with every Settings page also reachable from the corner menu | ![Storage settings and folder menu](screenshots/showcase/storage-settings-and-folder-menu.png) Storage & Filesystems shows what is mounted, next to Files and the folder menu |
+
+### Files and System Monitor
+
+| | |
+| --- | --- |
+| ![Files and System Monitor](screenshots/showcase/files-and-system-monitor.png) **Files** next to **System Monitor**, which shows memory, storage, CPU use and frames per second | ![Opening System Monitor from the corner menu](screenshots/showcase/text-editor-terminal-and-start-menu.png) Opening System Monitor (SysMon) from Applications > System |
+
+### Text Editor and Terminal
+
+| | |
+| --- | --- |
+| ![Text Editor](screenshots/showcase/text-editor.png) **Text Editor** with tabs, syntax colours, line numbers and Find/Replace, editing the VScript game `volatile-blocks.vs` | ![Terminal running vfetch](screenshots/showcase/terminal-vfetch-and-folder-menu.png) **Terminal** running `vfetch` and `meminfo` |
