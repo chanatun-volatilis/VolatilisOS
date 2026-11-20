@@ -72,7 +72,7 @@ choose **Install** and confirm it.
 
 ## Screenshots
 
-A closer look at the VolatilisOS 2.2 Beta desktop and its built-in apps.
+A closer look at the VolatilisOS 2.2 Beta "Navy Horizon" desktop and its built-in apps.
 
 ### The desktop and menus
 
