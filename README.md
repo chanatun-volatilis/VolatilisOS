@@ -10,7 +10,12 @@ https://volatilis-2033.itch.io/
 ![A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu all open at once](screenshots/system-monitor-and-terminal.png)
 *A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu, all running at the same time.*
 
-## Download (VolatilisOS 2.2 Beta)
+## Download (VolatilisOS 2.2 Beta "Navy Horizon")
+
+VolatilisOS 2.2 has a nickname: **Navy Horizon**. It is the current version.
+
+Looking for an older version? **VolatilisOS 2.1** (no installer yet) lives on its own branch:
+[`version-2.1`](https://github.com/chanatun-volatilis/VolatilisOS/tree/version-2.1).
 
 There are three disc images in this repository. Pick one:
 
@@ -43,7 +48,7 @@ In VirtualBox, make a new "Other / Unknown" 32-bit machine with 1 GB of memory
 and put the ISO in its optical drive. Nothing is written to any disk unless you
 choose **Install** and confirm it.
 
-## What's new in 2.2 Beta
+## What's new in 2.2 Beta "Navy Horizon"
 
 - **New boot experience.** A plain black-and-white GRUB menu that tells you what
   each choice does, then a VolatilisOS splash screen with the desktop's own
@@ -67,7 +72,7 @@ choose **Install** and confirm it.
 
 ## Screenshots
 
-A closer look at the VolatilisOS 2.2 Beta desktop and its built-in apps.
+A closer look at the VolatilisOS 2.2 Beta "Navy Horizon" desktop and its built-in apps.
 
 ### The desktop and menus
 
