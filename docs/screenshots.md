@@ -1,41 +1,62 @@
 # VolatilisOS 2.1 screenshots
 
-All of these were taken on VolatilisOS 2.1, running in QEMU, between September and November 2026. They are in the order they were taken.
+All 19 of these were taken on VolatilisOS 2.1, running in QEMU, between September and November 2026. They are in the order they were taken, so you can see 2.1 change over time.
 
 > **No installer yet.** 2.1 runs live from the disc only.
 
-![01-clock-and-memory-terminals.png](../screenshots/01-clock-and-memory-terminals.png)
-*1. An early 2.1 build with a pixel font: Clock, `vfetch`, and `meminfo` / `mem` / `heaptest` in two terminals.*
+![Early 2.1 Programs menu](../screenshots/13-programs-menu-and-vfetch-early.png)
+*1. An early 2.1 build with a pixel font, running `vfetch`*
 
-![02-settings-and-system-monitor.png](../screenshots/02-settings-and-system-monitor.png)
-*2. **Settings** (Desktop page: background, pattern, clock, accent, language, corners, shadow, opacity) and **System Monitor**.*
+![Display settings](../screenshots/15-display-settings-over-terminals.png)
+*2. Display settings: brightness, pixel size and terminal options*
 
-![03-files-icon-and-list-views.png](../screenshots/03-files-icon-and-list-views.png)
-*3. Two **Files** windows, one in icon view and one in list view with file sizes, next to `vfetch` and `meminfo`.*
+![System Monitor](../screenshots/14-system-monitor-over-terminals.png)
+*3. **System Monitor** shows memory, storage, CPU use, tasks and frames per second*
 
-![04-terminal-help-and-heap-test.png](../screenshots/04-terminal-help-and-heap-test.png)
-*4. The shell help text, `mem` and a `heaptest` run that shows the heap growing.*
+![3D Chess](../screenshots/16-3d-chess-japanese.png)
+*4. **3D Chess** with the Japanese interface and the navy Volatilis wallpaper*
 
-![05-programs-menu.png](../screenshots/05-programs-menu.png)
-*5. The **Programs** menu with search, places and app categories.*
+![Clock and memory terminals](../screenshots/01-clock-and-memory-terminals.png)
+*5. **Clock** next to `vfetch`, `meminfo`, `mem` and `heaptest`*
 
-![06-files-and-vfetch.png](../screenshots/06-files-and-vfetch.png)
-*6. Files and Terminal (`vfetch` reports 204 commands and 482 MiB RAM).*
+![Desktop settings](../screenshots/02-settings-and-system-monitor.png)
+*6. **Settings**, Desktop page: background, pattern, clock, accent, language, corners, shadow and opacity*
 
-![07-programs-menu-over-files.png](../screenshots/07-programs-menu-over-files.png)
-*7. The Programs menu opened over the Files windows.*
+![Graphics settings](../screenshots/17-graphics-settings-and-system-monitor.png)
+*7. **Settings**, Graphics page: quality presets, anti-aliasing, smoothing, shadows, rounded corners and transparency*
 
-![08-command-list-and-heap-test.png](../screenshots/08-command-list-and-heap-test.png)
-*8. The command list, `heaptest`, and `vfetch` with the new V-shaped logo.*
+![Files icon and list views](../screenshots/03-files-icon-and-list-views.png)
+*8. **Files** in icon view and list view, with a sidebar and a **USB DRIVE***
 
-![09-notes-vscript-editor.png](../screenshots/09-notes-vscript-editor.png)
-*9. **Notes** editing two VScript programs: `control-center.vs` and `pong.vs`.*
+![Heap test](../screenshots/04-terminal-help-and-heap-test.png)
+*9. `heaptest` checks the kernel heap and shows it growing*
 
-![10-four-terminals-1280x800.png](../screenshots/10-four-terminals-1280x800.png)
-*10. Four terminals with tabs and a Split menu: `ls -l`, help, `vfetch` at 1280×800, `meminfo` and `logo`.*
+![Programs menu over terminals](../screenshots/05-programs-menu.png)
+*10. The Programs menu opened over two terminals*
 
-![11-desktop-clock-calendar-programs.png](../screenshots/11-desktop-clock-calendar-programs.png)
-*11. The desktop right-click menu, Files, Terminal, Clock, Calendar and the Programs menu.*
+![Programs menu](../screenshots/18-programs-menu-clean-desktop.png)
+*11. The **Programs** menu, with search, places and app categories*
 
-![12-notes-terminal-clock-calendar.png](../screenshots/12-notes-terminal-clock-calendar.png)
-*12. Notes with text formatting reading `vsdocs.txt`, Terminal (209 commands), Clock and Calendar.*
+![Lock screen](../screenshots/19-lock-screen.png)
+*12. The **lock screen**: click or press a key to unlock*
+
+![Files and vfetch](../screenshots/06-files-and-vfetch.png)
+*13. Files next to Terminal running `vfetch` and `meminfo`*
+
+![Programs menu over Files](../screenshots/07-programs-menu-over-files.png)
+*14. The Programs menu opened over Files*
+
+![Command list](../screenshots/08-command-list-and-heap-test.png)
+*15. Part of the `help` command list, and `vfetch` with the V-shaped logo*
+
+![VScript in Notes](../screenshots/09-notes-vscript-editor.png)
+*16. **Notes** editing two VScript programs, `control-center.vs` and `pong.vs`*
+
+![Four terminals](../screenshots/10-four-terminals-1280x800.png)
+*17. Four **Terminal** windows with tabs and a Split menu, at 1280×800*
+
+![Desktop with menus](../screenshots/11-desktop-clock-calendar-programs.png)
+*18. Right-click the desktop for **New File**, **New Folder**, **In Terminal**, **Personalize** and **Clean***
+
+![Notes with formatting](../screenshots/12-notes-terminal-clock-calendar.png)
+*19. Notes with bold, colours and a ruler, reading `vsdocs.txt`, next to Clock and Calendar*
