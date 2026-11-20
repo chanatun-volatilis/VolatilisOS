@@ -4,8 +4,8 @@ An operating system created from scratch by me, a young teen who is into Operati
 Volatilis Tiktok account:
 https://www.tiktok.com/@alpha300332
 
-Links to donwload in itch.io:
-https://volatilis-2033.itch.io/volatilisos-v21
+Links to download in itch.io volatilis:
+https://volatilis-2033.itch.io/
 
 ![A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu all open at once](screenshots/system-monitor-and-terminal.png)
 *A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu, all running at the same time.*
