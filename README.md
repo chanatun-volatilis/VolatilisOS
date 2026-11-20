@@ -9,7 +9,12 @@ https://volatilis-2033.itch.io/volatilisos-v21
 
 ![The VolatilisOS desktop with Settings, Files and Terminal open](screenshots/terminal.png)
 
-## Download (VolatilisOS 2.2 Beta)
+## Download (VolatilisOS 2.2 Beta "Navy Horizon")
+
+VolatilisOS 2.2 has a nickname: **Navy Horizon**. It is the current version.
+
+Looking for an older version? **VolatilisOS 2.1** (no installer yet) lives on its own branch:
+[`version-2.1`](https://github.com/chanatun-volatilis/VolatilisOS/tree/version-2.1).
 
 There are three disc images in this repository. Pick one:
 
@@ -42,7 +47,7 @@ In VirtualBox, make a new "Other / Unknown" 32-bit machine with 1 GB of memory
 and put the ISO in its optical drive. Nothing is written to any disk unless you
 choose **Install** and confirm it.
 
-## What's new in 2.2 Beta
+## What's new in 2.2 Beta "Navy Horizon"
 
 - **New boot experience.** A plain black-and-white GRUB menu that tells you what
   each choice does, then a VolatilisOS splash screen with the desktop's own
