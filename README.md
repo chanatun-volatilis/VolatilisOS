@@ -1,94 +1,57 @@
-# VolatilisOS
-An operating system created from scratch by me, a young teen who is into Operating Systems and low level memory management programming, this project started when I was 12, (VolatilisOS Source isnt public yet) The development still continues to be active till this day, it features CLI and GUI interface, still under heavy development, ISO files can be downloaded here, on itch.io volatilis, Demonstration videos in tiktok VOLATILIS, YT account coming soon.
+# VolatilisOS 2.1 (older version)
 
-Volatilis Tiktok account:
-https://www.tiktok.com/@alpha300332
+> **No installer yet.** VolatilisOS 2.1 runs *live* from the disc only. It cannot
+> be installed to a hard disk. If you want the installer, use the current version,
+> **VolatilisOS 2.2 Beta "Navy Horizon"**, on the
+> [`main` branch](https://github.com/chanatun-volatilis/VolatilisOS/tree/main).
 
-Links to download in itch.io volatilis:
-https://volatilis-2033.itch.io/
+This branch keeps VolatilisOS **2.1** exactly as it was, so you can try it and see
+how the OS looked before 2.2. It holds the 2.1 disc image, its own small
+documentation set, and screenshots taken on 2.1.
 
-![A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu all open at once](screenshots/system-monitor-and-terminal.png)
-*A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu, all running at the same time.*
+![VolatilisOS 2.1 desktop with Terminal, Files, Clock, Calendar and the Programs menu](screenshots/11-desktop-clock-calendar-programs.png)
+*The VolatilisOS 2.1 desktop: Terminal, Files, Clock, Calendar and the Programs menu.*
 
-## Download (VolatilisOS 2.2 Beta)
-
-There are three disc images in this repository. Pick one:
+## Download
 
 | File | What it is | Size |
 | --- | --- | --- |
-| [`volatilis-gui.iso`](volatilis-gui.iso) | **GUI edition only.** Boots straight into the graphical desktop. | 44 MB |
-| [`volatilis-cli.iso`](volatilis-cli.iso) | **CLI edition only.** Boots into the text-only command line. Small and fast. | 10 MB |
-| [`volatilis-master.iso.zip`](volatilis-master.iso.zip) | **Both editions on one disc**, plus the installer. Unzip it first (GitHub does not allow files over 100 MB, so it is zipped). | 66 MB zipped, 128 MB unzipped |
+| [`volatilis-2.1-master.iso`](volatilis-2.1-master.iso) | The 2.1 master disc. One GRUB menu boots the **GUI edition** or the **CLI edition**. | 45 MB |
 
-SHA-256 checksums, so you can check your download is not broken:
+SHA-256 checksum, so you can check your download is not broken:
 
 ```
-9aa0dc8badd7a3eb209b762fe23a4f183d8bda6010aba0c7f12da6f3b71612b5  volatilis-gui.iso
-61c319ccdfc1813f437bc995e2c0cff74955ac1ea092c14778d8f4680d41817a  volatilis-cli.iso
-71a2f3a9aaa3c88b476715db220e969fda5efc7e9c12e5b61d1d62698cb351d5  volatilis-master.iso.zip
-b08f9500ae44a19022802d6476edf847b3bd8566fbeb527e233598543bd7ae94  volatilis.iso (inside the zip)
+bddfacfc53209ca7f67b2588f27ca80783cc98a452b750a331d89a687ba6a881  volatilis-2.1-master.iso
 ```
 
-### How to try it
+## Try it in 1 minute
 
-VolatilisOS is a 32-bit x86 system that boots with a normal (legacy BIOS) PC
-or a virtual machine. The easiest way is QEMU:
+VolatilisOS 2.1 is a 32-bit x86 system for legacy BIOS PCs and virtual machines.
+The easiest way is QEMU:
 
 ```sh
-qemu-system-i386 -m 1024 -cdrom volatilis-gui.iso      # the desktop
-qemu-system-i386 -m 512  -cdrom volatilis-cli.iso      # the command line
+qemu-system-i386 -m 512 -cdrom volatilis-2.1-master.iso
 ```
 
-In VirtualBox, make a new "Other / Unknown" 32-bit machine with 1 GB of memory
-and put the ISO in its optical drive. Nothing is written to any disk unless you
-choose **Install** and confirm it.
+Then pick **VolatilisOS v2.1 GUI Edition** (the desktop) or
+**VolatilisOS v2.1 CLI Edition** (text only) from the menu.
 
-## What's new in 2.2 Beta
+## Documentation for 2.1
 
-- **New boot experience.** A plain black-and-white GRUB menu that tells you what
-  each choice does, then a VolatilisOS splash screen with the desktop's own
-  colour icons, shown before the drivers start.
-- **Installer restyle.** Setup now uses VolatilisOS's own window style with a
-  depth (3D shadow) effect, mouse support, and a high-contrast mode.
-- **New sign-in and lock screens**, redesigned as one simple sign-in card.
-- **Redesigned Settings app** with a sidebar, search, and pages for
-  personalization, display, desktop and taskbar, keyboard and mouse, network,
-  storage, language, accessibility and more.
-- **Better laptop support.** Mice and trackpads work on real laptops such as the
-  HP ProBook (the system now takes the USB controllers over from the firmware
-  properly), with two-finger scrolling and tap-to-click on Synaptics touchpads,
-  plus laptop backlight control and a power button that asks before shutting down.
-- **Wi-Fi groundwork:** a connection manager and the first step of an Atheros
-  Wi-Fi driver with WPA2 security (still in progress, not usable yet).
-- **NetSurf web browser** comes pre-installed on the desktop, with SVG images.
-- **DOOM** (the open-source DoomGeneric engine with the free Freedoom game data).
-- Clock, Calendar, 3D Chess, Image Viewer and Video Player are back, with new
-  colour icons, a "volatilis" disk icon and a right-click folder menu.
-
-## Screenshots
-
-A closer look at the VolatilisOS 2.2 Beta desktop and its built-in apps.
-
-### The desktop and menus
-
-| | |
+| Page | What you learn |
 | --- | --- |
-| ![Right-click folder menu on the desktop](screenshots/desktop-folder-menu.png) Right-click the desktop to open any folder straight from a menu | ![Corner menu, Applications > System](screenshots/start-menu-applications.png) The corner (start) menu with Applications, Places and Settings |
+| [Getting started](docs/getting-started.md) | How to boot 2.1 in QEMU or VirtualBox, and what the boot menu means |
+| [What is in 2.1](docs/whats-in-2.1.md) | The desktop, the apps and the kernel features of 2.1 |
+| [Terminal guide](docs/terminal-guide.md) | Useful shell commands such as `vfetch`, `meminfo` and `heaptest` |
+| [Known limits](docs/known-limits.md) | What 2.1 cannot do yet, starting with: no installer |
+| [Screenshots](docs/screenshots.md) | All 12 screenshots of 2.1, with a short note on each |
 
-### Settings
+## Versions at a glance
 
-| | |
-| --- | --- |
-| ![Settings overview](screenshots/settings-overview.png) The **Settings** Overview page, with every Settings page also reachable from the corner menu | ![Storage settings and folder menu](screenshots/storage-settings-and-folder-menu.png) Storage & Filesystems shows what is mounted, next to Files and the folder menu |
+| Version | Nickname | Installer | Where |
+| --- | --- | --- | --- |
+| 2.2 Beta | **Navy Horizon** | Yes | [`main` branch](https://github.com/chanatun-volatilis/VolatilisOS/tree/main) |
+| 2.1 | none | **No installer yet** | this branch (`version-2.1`) |
 
-### Files and System Monitor
-
-| | |
-| --- | --- |
-| ![Files and System Monitor](screenshots/files-and-system-monitor.png) **Files** next to **System Monitor**, which shows memory, storage, CPU use and frames per second | ![Opening System Monitor from the corner menu](screenshots/text-editor-terminal-and-start-menu.png) Opening System Monitor (SysMon) from Applications > System |
-
-### Text Editor and Terminal
-
-| | |
-| --- | --- |
-| ![Text Editor](screenshots/text-editor.png) **Text Editor** with tabs, syntax colours, line numbers and Find/Replace, editing the VScript game `volatile-blocks.vs` | ![Terminal running vfetch](screenshots/terminal-vfetch-and-folder-menu.png) **Terminal** running `vfetch` and `meminfo` |
+Website and full docs: https://chanatun-volatilis.github.io/VolatilisOSDocs/
+· Downloads on itch.io: https://volatilis-2033.itch.io/
