@@ -15,6 +15,14 @@
 
 The screenshots use Thai Buddhist calendar year **2569** in their filenames, corresponding to **2026**. This is supported by their archive timestamps and not by an external release publication record.
 
+## Update: newly provided original screenshots
+
+On 21 November 2026, the author supplied additional original screenshot files. The directly inspected `Screenshot 2569-08-01 at 15.05.26.png`, `Screenshot 2569-08-01 at 15.05.49.png`, and `Screenshot 2569-08-03 at 07.39.56.png` all visibly identify **VolatilisOS v2.0**. The second explicitly notes that the OS runs its shell in ring 0 and records, but does not enforce, file modes. The third shows the memory-map and heap reporting.
+
+The desktop selected from this new batch, `Screenshot 2569-08-27 at 12.24.48.png`, depicts Welcome, Programs and Browser, but **its version is not visible**. The supplied 9 and 24 August GUI/terminal screenshots that display **v1.5** have deliberately been excluded as evidence of V2.0.
+
+The screenshot manifest and byte hashes are in [SCREENSHOT_PROVENANCE.md](SCREENSHOT_PROVENANCE.md). This does not change the missing verified V2.0 ISO status.
+
 ## V2.0 claims supported by screenshots
 
 **Observed screen content:** x86 32-bit kernel, VGA text, vsh shell, a VLFS2 root on `/dev/ata0p1`, filesystem/VFS summary, paging and memory reports, `vfetch`, built-in C interpreter, text editor and various shell utilities. Screenshot text discusses a custom disk installer; **no safe installation outcome was independently verified**.
