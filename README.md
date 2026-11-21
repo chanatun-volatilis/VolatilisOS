@@ -1,125 +1,59 @@
-# VolatilisOS
+# VolatilisOS 2.0 Beta — historical archive
 
-**VolatilisOS** is an independently developed, experimental **32-bit x86 operating system** with two bootable editions: a graphical desktop (**GUI**) and a text-first command environment (**CLI**). The project began when I was 12, out of an interest in low-level programming, kernels and operating systems.
+> **Archive preparation; ISO publication pending version verification.** This branch documents the recovered **VolatilisOS V2.0 Beta** generation. The ISO supplied for this archive was inspected and identifies itself as **VolatilisOS 2.1**, so it is **not** published here as V2.0. The correct V2.0 ISO is still needed. **No source code is distributed by this branch.**
 
-The current **published download line** is **VolatilisOS 2.2 Beta — “Navy Horizon”**. Development continues separately in the source repository. **The ISO files here are prebuilt snapshots; they do not update automatically when the source code changes.**
+**Latest public release:** [VolatilisOS 2.2 Beta, “Navy Horizon”](https://github.com/chanatun-volatilis/VolatilisOS/tree/main)  
+**Next historical branch:** [VolatilisOS 2.1](https://github.com/chanatun-volatilis/VolatilisOS/tree/version-2.1)
 
-| | |
-| --- | --- |
-| **Published version** | 2.2 Beta — *Navy Horizon* |
-| **Editions** | GUI, CLI, and a master ISO containing both |
-| **CPU architecture** | 32-bit x86 / i686 |
-| **Recommended first boot** | QEMU or a legacy-BIOS virtual machine |
-| **Release readiness** | Experimental/beta; **not certified safe for installation on real-user disks** |
-| **Development source** | [VolatilisOS-source-code](https://github.com/chanatun-volatilis/VolatilisOS-source-code) (currently private) |
+VolatilisOS is an independently developed, experimental x86 operating-system project written in C and low-level assembly. This historical branch preserves the **2.0 Beta era** separately from the actively developed 2.2 release line.
 
-**Current technical status:** [What works and what's unfinished](docs/CURRENT_STATUS.md) · [Architecture](docs/ARCHITECTURE.md) · [Build and test](docs/BUILD_AND_TEST.md) · [Download & installation safety](docs/RELEASE_AND_SAFETY.md)
+## What we can verify about V2.0
 
-Development-source status on these pages was reviewed **21 November 2026**, against commit `9b69ff2ba24901ed98d040f205882a7d3fd5868c`. It describes the source tree, **not guaranteed features of every uploaded binary**.
+Two screenshots dated **1 and 5 August 2026** visibly identify the CLI as **“VolatilisOS v2.0”**. In these images:
 
-![A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu all open at once](screenshots/system-monitor-and-terminal.png)
-*A graphical VolatilisOS desktop with Text Editor, Terminal, System Monitor and the folder menu.*
+- The shell identifies itself as **vsh 2.0**, with multiple workspaces, command history and redirection/pipes.
+- The screen shows an **80×25 VGA text interface**, an i386 protected-mode kernel and `vfetch` hardware/system information.
+- The reported root filesystem is **VLFS2** on `/dev/ata0p1`. On-screen notes also describe a **VFS** routing paths to filesystems, `/dev` and `/proc`.
+- A built-in **C interpreter**, command-line tools, an interactive text editor and a prototype `install` command are described or shown.
+- The boot description mentions a **custom bootloader and GRUB**.
 
-## Download — 2.2 Beta “Navy Horizon”
+The existence of an installer command does **not** establish that V2.0 can safely install to a real computer. Treat all installation/disk writes as **experimental and unverified**. These are screenshot-grounded observations, not a fresh V2.0 source build or automated test report.
 
-These files are present in this public repository. Choose the edition you want:
+## ISO download
 
-| Download | Description | Approximate size |
-| --- | --- | --- |
-| [`volatilis-gui.iso`](volatilis-gui.iso) | Standalone graphical desktop | 44 MB |
-| [`volatilis-cli.iso`](volatilis-cli.iso) | Standalone text-first edition | 10 MB |
-| [`volatilis-master.iso.zip`](volatilis-master.iso.zip) | Both editions with a GRUB selection menu and installer paths; **unzip before booting** | 66 MB ZIP, about 128 MB uncompressed |
+**Not yet available for V2.0 Beta on this branch.** The provided file `volatilis-master.iso` was checked against the accompanying `VOS V2.1 Beta.zip` and found to be byte-identical. Its GRUB menu labels the kernels *VolatilisOS v2.1 GUI Edition* and *VolatilisOS v2.1 CLI Edition*. Publishing it here as V2.0 would mislabel the release.
 
-**Published SHA-256 checksums** (copied from the existing release README; **not independently rehashed during this documentation update**):
+When a matching V2.0 ISO is provided, this section can list its actual filename, size, SHA-256 checksum, verified boot-menu label and a safe QEMU boot command. **No source archive or development files will be included.**
 
-```text
-9aa0dc8badd7a3eb209b762fe23a4f183d8bda6010aba0c7f12da6f3b71612b5  volatilis-gui.iso
-61c319ccdfc1813f437bc995e2c0cff74955ac1ea092c14778d8f4680d41817a  volatilis-cli.iso
-71a2f3a9aaa3c88b476715db220e969fda5efc7e9c12e5b61d1d62698cb351d5  volatilis-master.iso.zip
-b08f9500ae44a19022802d6476edf847b3bd8566fbeb527e233598543bd7ae94  volatilis.iso (inside ZIP)
-```
+## August 2026 snapshots
 
-To calculate a downloaded file's checksum, use `sha256sum <filename>` on Linux or `shasum -a 256 <filename>` on macOS and compare it with the corresponding published value. A checksum is **not** a digital signature.
+The supplied **Volatilis gallery** includes August 2026 captures. The intended *single desktop image* is:
 
-**Older release:** VolatilisOS 2.1 (without the newer installer flow) is archived on the [`version-2.1` branch](https://github.com/chanatun-volatilis/VolatilisOS/tree/version-2.1).
+**Desktop candidate:** `Screenshot 2569-08-09 at 15.10.41.png` — blue desktop, launcher, file manager, calculator and image windows. It is dated August, but its precise version is **not independently proven**, so it should be captioned “August 2026 desktop-era snapshot,” not claimed to show a verified V2.0 ISO.
 
-## Run it safely
+**CLI candidates:**
+- `Screenshot 2569-08-01 at 15.05.26.png` — clearly displays “VolatilisOS v2.0,” `vfetch`, the editor and a V2.0 feature summary.
+- `Screenshot 2569-08-05 at 15.15.51.png` — clearly displays “VolatilisOS v2.0,” command help, workspaces, directory listing and memory information.
 
-The simplest test is an **isolated QEMU virtual machine**:
+These original image files have been **selected for inclusion but have not yet been uploaded** to this branch. The archive will embed exactly one August desktop candidate and up to two of the verified V2.0 text snapshots once binary asset upload is available. Do not use 2.1/2.2 screenshots as V2.0 proof. See [snapshot provenance](docs/SCREENSHOT_PROVENANCE.md).
+
+## Running historical builds
+
+For the correct ISO, the conservative first test is a **fresh BIOS-mode QEMU guest with no host disks attached**:
 
 ```sh
-# In the directory containing the downloaded images:
-qemu-system-i386 -m 1024 -cdrom volatilis-gui.iso -boot d
-qemu-system-i386 -m 512  -cdrom volatilis-cli.iso -boot d
-
-# Master edition selection menu:
-unzip volatilis-master.iso.zip
-qemu-system-i386 -m 1024 -cdrom volatilis.iso -boot d
+# Replace this placeholder with the filename of a *verified* V2.0 ISO.
+qemu-system-i386 -m 512 -cdrom VERIFIED_VOLATILIS_2_0_BETA.iso -boot d
 ```
 
-The commands above do not attach a host hard drive. In VirtualBox, start with an “Other / Unknown” 32-bit guest, **BIOS firmware**, one CPU, and 1 GB RAM. If you want to explore the installer, use a **new disposable virtual disk**, never a drive holding important data. Please read [installation and release-safety guidance](docs/RELEASE_AND_SAFETY.md) first.
+This is an example for a future verified file, **not** a link to a build already available. Do not boot or install to physical storage as part of testing this archive.
 
-## What's in VolatilisOS 2.2 Beta
+## Documentation
 
-The 2.2 *Navy Horizon* release description includes a GRUB edition-selection menu, redesigned boot splash, windowed installer, Settings app, sign-in/lock screens, system tools, updated file manager and graphical applications.
+- [V2.0 evidence and version-identification notes](docs/RELEASE_EVIDENCE.md)
+- [Snapshot selection and provenance](docs/SCREENSHOT_PROVENANCE.md)
+- [Commands and safety](docs/COMMANDS_AND_SAFETY.md)
 
-The **current source tree** also contains a substantially expanded architecture:
+## Source and licensing
 
-- **Two separate kernels:** GUI and CLI build/boot independently, sharing selected components and versioned userspace interfaces.
-- **System software:** scheduling, ELF programs, file descriptors, VScript, C/C++ toolchain/SDK work, VPK packages and a selection of third-party ports.
-- **Storage:** VFS, VLFS2, FAT read/write, read-only ext-family/exFAT/NTFS adapters, BIOS installer workflows and QEMU storage safety tests.
-- **Graphics and applications:** desktop compositor, text editor, system utilities, media/image viewers, scalable rendering/font work, package-supported NetSurf browser and DoomGeneric/Freedoom.
-- **Networking and devices:** IPv4/IPv6, TCP/UDP, DNS, TLS, Ethernet and several virtual hardware drivers.
-
-**Not finished / not certified:** Wi-Fi cannot currently scan or join networks using the implemented radio driver; UEFI installation and Secure Boot are unsupported; broad real-GPU acceleration and SMP are not implemented; installer safety on physical drives has not been certified. Some library/port features are partial, and hardware-specific behavior varies. See the [status matrix](docs/CURRENT_STATUS.md) for evidence and limits.
-
-## Screenshots
-
-These pictures show the **published GUI build** and its desktop applications. They are not proof that a newer source change is present in the downloadable ISO.
-
-### Desktop and menus
-
-| | |
-| --- | --- |
-| ![Right-click folder menu on the desktop](screenshots/desktop-folder-menu.png) Right-click a desktop folder menu | ![Start menu with Applications](screenshots/start-menu-applications.png) Applications in the launcher |
-
-### Settings and file management
-
-| | |
-| --- | --- |
-| ![Settings overview](screenshots/settings-overview.png) Settings overview | ![Storage settings and folder menu](screenshots/storage-settings-and-folder-menu.png) Storage settings and the folder menu |
-
-### Files and system monitor
-
-| | |
-| --- | --- |
-| ![Files and System Monitor](screenshots/files-and-system-monitor.png) Files and System Monitor | ![System Monitor and terminal](screenshots/text-editor-terminal-and-start-menu.png) Launcher, Text Editor and Terminal |
-
-### Text editor and terminal
-
-| | |
-| --- | --- |
-| ![Text Editor](screenshots/text-editor.png) Tabbed Text Editor with syntax highlighting | ![Terminal running vfetch](screenshots/terminal-vfetch-and-folder-menu.png) Terminal with `vfetch` and `meminfo` |
-
-### Redesigned apps: Image Viewer, Video Player, Calendar and Clock
-
-These two pictures show the redesigned media and time apps from the **development source**. A redesign shown here may not be in the published 2.2 ISO yet.
-
-| | |
-| --- | --- |
-| ![Redesigned apps, picture 1](screenshots/apps-redesign-1.png) Redesigned apps (1 of 2) | ![Redesigned apps, picture 2](screenshots/apps-redesign-2.png) Redesigned apps (2 of 2) |
-
-## Source code and documentation
-
-The authoritative development source is maintained in [`VolatilisOS-source-code`](https://github.com/chanatun-volatilis/VolatilisOS-source-code). It is **currently private**: a GitHub 404 is possible if you do not have access. This public repository is for distributable images, screenshots and user-facing documentation.
-
-The old single-file `src/desktop.c`-style source layout is outdated. Current code has `kernel/core/`, `kernel/services/`, `drivers/`, `graphics/`, `filesystem/`, `networking/`, `userspace/` and `vscript/`. Read the [architecture overview](docs/ARCHITECTURE.md) before following historical build instructions.
-
-## Project links
-
-- [Volatilis on TikTok](https://www.tiktok.com/@alpha300332)
-- [Volatilis on itch.io](https://volatilis-2033.itch.io/)
-
-## Copyright and licensing
-
-The source repository states **Copyright (C) 2025–2026 Chanatun Volatilis Poolcharuansin. All rights reserved.** This public repository has no root `LICENSE` file as of this documentation update. **Do not assume the VolatilisOS source is MIT-licensed or freely redistributable.** Third-party ports, fonts, tools and packaged assets have their own license terms; consult their notices. Being able to download an ISO is not a blanket license to redistribute its constituent code.
+**No kernel source, VScript compiler source, private development tree, or V2.1 source archive is included in this release branch.** The source repository is separate and private. Copyright (C) 2025–2026 Chanatun Volatilis Poolcharuansin. All rights reserved, subject to applicable third-party licenses. This historical documentation is not a license grant to redistribute the OS source.
