@@ -8,20 +8,23 @@
 | --- | --- | --- |
 | Gallery screenshot `Screenshot 2569-08-01 at 15.05.26.png` | The screenshot visibly names “VolatilisOS v2.0,” `vsh 2.0`, `vfetch`, VLFS2, a VFS layer, C interpreter, editor and prototype installer | Actual on-disk integrity, date of ISO compilation, successfully tested physical installation |
 | Gallery screenshot `Screenshot 2569-08-05 at 15.15.51.png` | V2.0 text shell, workspaces, help output, `ls`, `meminfo` and memory-map reporting | Exact supported command count or hardware list |
-| Author-uploaded `Screenshot 2569-08-27 at 12.24.48.png` | An August desktop view with Welcome, browser and Programs launcher; selected as the single GUI-era illustration | Conclusive proof this GUI image was produced by the same V2.0 ISO |
+| Author-uploaded `Screenshot 2569-08-27 at 12.24.48.png` | An August desktop view with Welcome, browser and Programs launcher; one of the August graphical-development snapshots | Conclusive proof this GUI image was produced by the same V2.0 ISO |
 | Uploaded `volatilis-master.iso` | 43,612,160 bytes, SHA-256 `49843b7c441bf1ee20e2a2934f29c624b7d6f0d9ef8427a29485e236c63f2b63`; its GRUB menu and embedded kernel strings say `2.1` | **It is not verified to be V2.0**; therefore it has not been distributed in this branch |
 | `VOS V2.1 Beta.zip` | Contains a `build/volatilis-master.iso` with the exact same SHA-256 as the uploaded ISO | A V2.0 release source tree (this is labeled 2.1) |
 | Existing public `version-2.1` branch | Documents the subsequent 2.1 release as BIOS/live-first and says the older installer was not supported for production | Does not replace direct evidence for 2.0 or prove every older V2.0 command functioned correctly |
 
 The screenshots use Thai Buddhist calendar year **2569** in their filenames, corresponding to **2026**. This is supported by their archive timestamps and not by an external release publication record.
 
-## Update: newly provided original screenshots
+## Screenshot gallery update — all 27 uploaded images
 
-On 21 November 2026, the author supplied additional original screenshot files. The directly inspected `Screenshot 2569-08-01 at 15.05.26.png`, `Screenshot 2569-08-01 at 15.05.49.png`, and `Screenshot 2569-08-03 at 07.39.56.png` all visibly identify **VolatilisOS v2.0**. The second explicitly notes that the OS runs its shell in ring 0 and records, but does not enforce, file modes. The third shows the memory-map and heap reporting.
+The author has now uploaded **27 August screenshots**, displayed and captioned in the [README](../README.md). They include early graphical desktop experiments, shell workspaces, VScript tools, memory information, file management, image editing, browser/networking and Welcome screens.
 
-The desktop selected from this new batch, `Screenshot 2569-08-27 at 12.24.48.png`, depicts Welcome, Programs and Browser, but **its version is not visible**. The supplied 9 and 24 August GUI/terminal screenshots that display **v1.5** have deliberately been excluded as evidence of V2.0.
+- **V2.0 confirmed by on-screen labels:** The August 1 and August 3 CLI screenshots, plus an August 17 combined CLI capture, show a V2.0 shell or `vfetch` banner. This is direct screenshot evidence of the V2.0 **text** interface.
+- **Older V1.5 clearly visible:** The August 9 Calendar/Terminal screenshot, several August 23 Terminal/System Monitor images and the August 24 two-Terminal image show `Volatilis OS v1.5`. They are included as **historical development screenshots**, never described as V2.0 releases.
+- **Other GUI versions not proven:** Paint, file manager, Japanese UI, web browser, DHCP/networking tools, image viewer, launcher and Welcome windows demonstrate the appearance of August desktop builds, but many screenshots do not show a build version.
+- **Project page, not boot evidence:** One August 9 image captures a project listing for “VolatilisOS Graphical User Interface Edition V2.0 ISO”. That is evidence of an advertised project page, not independent verification of the ISO's identity, content or boot status.
 
-The screenshot manifest and byte hashes are in [SCREENSHOT_PROVENANCE.md](SCREENSHOT_PROVENANCE.md). This does not change the missing verified V2.0 ISO status.
+The [27-file inventory](SCREENSHOT_PROVENANCE.md) records filenames, captions, version classifications and Git object hashes. **These screenshots do not replace checking the correct V2.0 ISO before publishing it.**
 
 ## V2.0 claims supported by screenshots
 
