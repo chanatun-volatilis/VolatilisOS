@@ -9,7 +9,7 @@ VolatilisOS is an independently developed, experimental x86 operating-system pro
 
 ## What we can verify about V2.0
 
-Two screenshots dated **1 and 5 August 2026** visibly identify the CLI as **“VolatilisOS v2.0”**. In these images:
+Screenshots dated **1, 3 and 5 August 2026** visibly identify the CLI as **“VolatilisOS v2.0”**. In these images:
 
 - The shell identifies itself as **vsh 2.0**, with multiple workspaces, command history and redirection/pipes.
 - The screen shows an **80×25 VGA text interface**, an i386 protected-mode kernel and `vfetch` hardware/system information.
