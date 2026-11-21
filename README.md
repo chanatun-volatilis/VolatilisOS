@@ -53,6 +53,7 @@ This is an example for a future verified file, **not** a link to a build already
 - [V2.0 evidence and version-identification notes](docs/RELEASE_EVIDENCE.md)
 - [Snapshot selection and provenance](docs/SCREENSHOT_PROVENANCE.md)
 - [Commands and safety](docs/COMMANDS_AND_SAFETY.md)
+- [Publish checklist for the verified ISO and three screenshots](docs/UPLOAD_CHECKLIST.md)
 
 ## Source and licensing
 
