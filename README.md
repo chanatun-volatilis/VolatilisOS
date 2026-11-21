@@ -101,6 +101,14 @@ These pictures show the **published GUI build** and its desktop applications. Th
 | --- | --- |
 | ![Text Editor](screenshots/text-editor.png) Tabbed Text Editor with syntax highlighting | ![Terminal running vfetch](screenshots/terminal-vfetch-and-folder-menu.png) Terminal with `vfetch` and `meminfo` |
 
+### Redesigned apps: Image Viewer, Video Player, Calendar and Clock
+
+These two pictures show the redesigned media and time apps from the **development source**. A redesign shown here may not be in the published 2.2 ISO yet.
+
+| | |
+| --- | --- |
+| ![Redesigned apps, picture 1](screenshots/apps-redesign-1.png) Redesigned apps (1 of 2) | ![Redesigned apps, picture 2](screenshots/apps-redesign-2.png) Redesigned apps (2 of 2) |
+
 ## Source code and documentation
 
 The authoritative development source is maintained in [`VolatilisOS-source-code`](https://github.com/chanatun-volatilis/VolatilisOS-source-code). It is **currently private**: a GitHub 404 is possible if you do not have access. This public repository is for distributable images, screenshots and user-facing documentation.
