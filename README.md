@@ -27,49 +27,51 @@ When a matching V2.0 ISO is provided, this section can list its actual filename,
 
 ## August 2026 screenshots
 
-### August desktop (build version not confirmed)
+**All 27 screenshots currently uploaded to this branch** are displayed below, with descriptions like the [main release README](https://github.com/chanatun-volatilis/VolatilisOS/tree/main). The dates are taken from the original filenames (Thai Buddhist calendar year 2569 = 2026). They capture multiple development builds, **not one verified V2.0 GUI ISO**.
 
-![August 27 VolatilisOS blue desktop, Welcome, browser and Programs launcher](screenshots/august-desktop.png)
+The first four photos visibly show **VolatilisOS v2.0 on the CLI**. Several graphical Terminal images explicitly show **VolatilisOS v1.5**; those are included as earlier desktop history, not advertised as V2.0. Other GUI images have no visible version identifier. The project-page picture is archival website evidence, not a boot screenshot.
 
-*August 27, 2026 — a desktop-era view. No exact V2.0 GUI version number is visible.*
+### VolatilisOS v2.0 command-line interface — version confirmed
 
-### VolatilisOS V2.0 CLI
+| | |
+| --- | --- |
+| ![August 1 VolatilisOS historical screenshot: Text editor beside the V2.0 feature overview, VLFS2/VFS explanation, and `vfetch` output.](screenshots/v2.0-cli-editor-vfetch.png) **August 1, 2026 — VolatilisOS v2.0 CLI.** Text editor beside the V2.0 feature overview, VLFS2/VFS explanation, and `vfetch` output. | ![August 1 VolatilisOS historical screenshot: Shell shortcut help, physical memory map, `mem`, `meminfo` and system details.](screenshots/v2.0-cli-help-memory.png) **August 1, 2026 — VolatilisOS v2.0 CLI.** Shell shortcut help, physical memory map, `mem`, `meminfo` and system details. |
+| ![August 3 VolatilisOS historical screenshot: Kernel heap report, page-frame memory map and the V2.0 version banner.](screenshots/v2.0-cli-memory-map.png) **August 3, 2026 — VolatilisOS v2.0 CLI.** Kernel heap report, page-frame memory map and the V2.0 version banner. | ![August 17 VolatilisOS historical screenshot: Split-screen terminal reporting network and memory information alongside the V2.0 filesystem, installer and `vfetch` overview.](screenshots/Screenshot%202569-08-17%20at%2012.33.06%20copy.png) **August 17, 2026 — VolatilisOS v2.0 CLI.** Split-screen terminal reporting network and memory information alongside the V2.0 filesystem, installer and `vfetch` overview. |
 
-![VolatilisOS V2.0 built-in editor, vfetch and VLFS2/VFS description](screenshots/v2.0-cli-editor-vfetch.png)
+### August 9: early graphical desktop and development
 
-![VolatilisOS V2.0 CLI workspaces, commands and memory information](screenshots/v2.0-cli-help-memory.png)
+| | |
+| --- | --- |
+| ![August 9 VolatilisOS historical screenshot: Calendar, Files, Japanese menus and a Terminal whose `vfetch` identifies VolatilisOS v1.5.](screenshots/Screenshot%202569-08-09%20at%2015.02.13.png) **August 9, 2026 — GUI screenshot explicitly showing v1.5.** Calendar, Files, Japanese menus and a Terminal whose `vfetch` identifies VolatilisOS v1.5. | ![August 9 VolatilisOS historical screenshot: Japanese-language terminal and Files windows with a music/gallery player.](screenshots/Screenshot%202569-08-09%20at%2015.03.53.png) **August 9, 2026 — GUI build number not displayed.** Japanese-language terminal and Files windows with a music/gallery player. |
+| ![August 9 VolatilisOS historical screenshot: VScript documentation open in the editor next to the file manager and Japanese Terminal.](screenshots/Screenshot%202569-08-09%20at%2015.04.25.png) **August 9, 2026 — GUI build number not displayed.** VScript documentation open in the editor next to the file manager and Japanese Terminal. | ![August 9 VolatilisOS historical screenshot: Editing a VScript Pong program with a small game window running above the source.](screenshots/Screenshot%202569-08-09%20at%2015.05.06.png) **August 9, 2026 — GUI build number not displayed.** Editing a VScript Pong program with a small game window running above the source. |
+| ![August 9 VolatilisOS historical screenshot: VScript source code and a graphical Terminal showing directory and memory commands.](screenshots/Screenshot%202569-08-09%20at%2015.05.42.png) **August 9, 2026 — GUI build number not displayed.** VScript source code and a graphical Terminal showing directory and memory commands. | ![August 9 VolatilisOS historical screenshot: Several small graphical media and visualization windows, including a music player and colored drawing surfaces.](screenshots/Screenshot%202569-08-09%20at%2015.06.54.png) **August 9, 2026 — GUI build number not displayed.** Several small graphical media and visualization windows, including a music player and colored drawing surfaces. |
+| ![August 9 VolatilisOS historical screenshot: Paint and image-editing windows with a colorful polygon drawing and a pixel-art scene.](screenshots/Screenshot%202569-08-09%20at%2015.08.24.png) **August 9, 2026 — GUI build number not displayed.** Paint and image-editing windows with a colorful polygon drawing and a pixel-art scene. | ![August 9 VolatilisOS historical screenshot: Windowed desktop with image viewers, Programs launcher, Files, and Calculator.](screenshots/Screenshot%202569-08-09%20at%2015.10.41.png) **August 9, 2026 — GUI build number not displayed.** Windowed desktop with image viewers, Programs launcher, Files, and Calculator. |
+| ![August 9 VolatilisOS historical screenshot: An August project-page screenshot advertising a “VolatilisOS Graphical User Interface Edition V2.0 ISO”; this does not independently validate the binary.](screenshots/Screenshot%202569-08-09%20at%2015.16.09.png) **August 9, 2026 — Archived project page, not an OS runtime capture.** An August project-page screenshot advertising a “VolatilisOS Graphical User Interface Edition V2.0 ISO”; this does not independently validate the binary. |  |
 
-![VolatilisOS V2.0 memory map and kernel heap information](screenshots/v2.0-cli-memory-map.png)
+### August 23: desktop apps, networking and graphics
 
+| | |
+| --- | --- |
+| ![August 23 VolatilisOS historical screenshot: Clock/Calendar and two Terminal windows displaying V1.5 system information and a memory map.](screenshots/Screenshot%202569-08-23%20at%2010.38.08.png) **August 23, 2026 — GUI screenshot explicitly showing v1.5.** Clock/Calendar and two Terminal windows displaying V1.5 system information and a memory map. | ![August 23 VolatilisOS historical screenshot: Clock, Terminal memory diagnostics and a desktop context menu.](screenshots/Screenshot%202569-08-23%20at%2010.38.21.png) **August 23, 2026 — GUI screenshot explicitly showing v1.5.** Clock, Terminal memory diagnostics and a desktop context menu. |
+| ![August 23 VolatilisOS historical screenshot: System Monitor showing tasks, memory and performance alongside a Terminal running `vfetch`.](screenshots/Screenshot%202569-08-23%20at%2010.39.17.png) **August 23, 2026 — GUI screenshot explicitly showing v1.5.** System Monitor showing tasks, memory and performance alongside a Terminal running `vfetch`. | ![August 23 VolatilisOS historical screenshot: Files, application launcher and Terminal displaying hardware and memory reports.](screenshots/Screenshot%202569-08-23%20at%2010.39.47.png) **August 23, 2026 — GUI screenshot explicitly showing v1.5.** Files, application launcher and Terminal displaying hardware and memory reports. |
+| ![August 23 VolatilisOS historical screenshot: Files windows and Notes displaying an explanation of the network stack and commands.](screenshots/Screenshot%202569-08-23%20at%2010.40.57.png) **August 23, 2026 — GUI build number not displayed.** Files windows and Notes displaying an explanation of the network stack and commands. | ![August 23 VolatilisOS historical screenshot: Image Viewer with three pictures and Files in both icon and list layouts.](screenshots/Screenshot%202569-08-23%20at%2010.42.45.png) **August 23, 2026 — GUI build number not displayed.** Image Viewer with three pictures and Files in both icon and list layouts. |
+| ![August 23 VolatilisOS historical screenshot: Japanese-language Terminal help/information beside the applications launcher.](screenshots/Screenshot%202569-08-23%20at%2010.45.59.png) **August 23, 2026 — GUI build number not displayed.** Japanese-language Terminal help/information beside the applications launcher. | ![August 23 VolatilisOS historical screenshot: Early graphical web browser displaying the World Wide Web site beside a spreadsheet-style bar chart.](screenshots/Screenshot%202569-08-23%20at%2010.49.07.png) **August 23, 2026 — GUI build number not displayed.** Early graphical web browser displaying the World Wide Web site beside a spreadsheet-style bar chart. |
+| ![August 23 VolatilisOS historical screenshot: Graphical browser showing the W3C site next to the Network app with DHCP, gateway and DNS controls.](screenshots/Screenshot%202569-08-23%20at%2010.50.21.png) **August 23, 2026 — GUI build number not displayed.** Graphical browser showing the W3C site next to the Network app with DHCP, gateway and DNS controls. | ![August 23 VolatilisOS historical screenshot: Paint and image-editing windows, a drawing toolbar, color palettes and pixel artwork.](screenshots/Screenshot%202569-08-23%20at%2010.52.01.png) **August 23, 2026 — GUI build number not displayed.** Paint and image-editing windows, a drawing toolbar, color palettes and pixel artwork. |
 
-The author has now provided **original August screenshots** for this historical archive. The screenshots are selected below, with their exact build identity distinguished from their capture date. The **image files are not yet on GitHub**; download the separately prepared screenshot package and upload the four files to `screenshots/` to enable inline images. No unavailable links are shown as though they were already published.
+### August 24: older v1.5 console history
 
-### One desktop-era view (version not confirmed)
+| | |
+| --- | --- |
+| ![August 24 VolatilisOS historical screenshot: Two Terminal windows showing Files, kernel heap, `id`, physical memory, and a V1.5 system banner.](screenshots/Screenshot%202569-08-24%20at%2012.34.36.png) **August 24, 2026 — GUI screenshot explicitly showing v1.5.** Two Terminal windows showing Files, kernel heap, `id`, physical memory, and a V1.5 system banner. |  |
 
-**27 August 2026 — Welcome, web browser and Programs launcher**
+### August 27: Welcome, browser and application launcher
 
-`Screenshot 2569-08-27 at 12.24.48.png` shows the blue windowed VolatilisOS desktop, a Welcome window, the graphical web browser and the application launcher. It does **not** show a V2.0 version banner, so it is an **August desktop-era illustration**, not proof that the particular GUI build is V2.0.
+| | |
+| --- | --- |
+| ![August 27 VolatilisOS historical screenshot: Welcome window, early web browser and searchable Programs launcher on a blue desktop.](screenshots/Screenshot%202569-08-27%20at%2012.24.48.png) **August 27, 2026 — GUI build number not displayed.** Welcome window, early web browser and searchable Programs launcher on a blue desktop. | ![August 27 VolatilisOS historical screenshot: Welcome walkthrough beside the browser; illustrates the desktop's window borders, taskbar and typography.](screenshots/Screenshot%202569-08-27%20at%2012.25.08.png) **August 27, 2026 — GUI build number not displayed.** Welcome walkthrough beside the browser; illustrates the desktop's window borders, taskbar and typography. |
+| ![August 27 VolatilisOS historical screenshot: A second uploaded copy of the August 27 Welcome, browser and launcher desktop scene.](screenshots/august-desktop.png) **August 27, 2026 — GUI build number not displayed.** A second uploaded copy of the August 27 Welcome, browser and launcher desktop scene. |  |
 
-**Planned public filename:** `screenshots/august-desktop.png`
-
-### V2.0 command-line interface (version explicitly visible)
-
-| Capture date | Original screenshot | What it demonstrates |
-| --- | --- | --- |
-| **1 August 2026** | `Screenshot 2569-08-01 at 15.05.26.png` | V2.0 editor, `vfetch`, VLFS2 and VFS explanation, and `version` |
-| **1 August 2026** | `Screenshot 2569-08-01 at 15.05.49.png` | V2.0 shell navigation/help, `meminfo`, `mem` and ring-0 permission caveat |
-| **3 August 2026** | `Screenshot 2569-08-03 at 07.39.56.png` | V2.0 `meminfo`, `mem`, `id` and the firmware memory map |
-
-These images visibly label the command-line OS **VolatilisOS v2.0**.
-
-**Planned public filenames:**
-- `screenshots/v2.0-cli-editor-vfetch.png`
-- `screenshots/v2.0-cli-help-memory.png`
-- `screenshots/v2.0-cli-memory-map.png`
-
-I also reviewed the supplied **9 August** and **24 August** images that explicitly show `Volatilis OS v1.5`. They are **not used as V2.0 evidence**. Other August GUI images without visible version markers were not selected because this README keeps just one desktop-era screenshot, as originally requested.
-
-For the exact selected originals, checksums and [upload/embedding instructions](docs/UPLOAD_CHECKLIST.md), see the [screenshot provenance record](docs/SCREENSHOT_PROVENANCE.md).
+For the original filenames, version-label distinctions, and repository file identities, see [screenshot provenance](docs/SCREENSHOT_PROVENANCE.md). All images above are already tracked on this historical branch; there is no separate image upload step. The **actual V2.0 ISO is still pending**, because the previously provided ISO self-identifies as V2.1.
 
 ## Running historical builds
 
