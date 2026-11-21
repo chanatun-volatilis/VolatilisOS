@@ -27,6 +27,21 @@ When a matching V2.0 ISO is provided, this section can list its actual filename,
 
 ## August 2026 screenshots
 
+### August desktop (build version not confirmed)
+
+![August 27 VolatilisOS blue desktop, Welcome, browser and Programs launcher](screenshots/august-desktop.png)
+
+*August 27, 2026 — a desktop-era view. No exact V2.0 GUI version number is visible.*
+
+### VolatilisOS V2.0 CLI
+
+![VolatilisOS V2.0 built-in editor, vfetch and VLFS2/VFS description](screenshots/v2.0-cli-editor-vfetch.png)
+
+![VolatilisOS V2.0 CLI workspaces, commands and memory information](screenshots/v2.0-cli-help-memory.png)
+
+![VolatilisOS V2.0 memory map and kernel heap information](screenshots/v2.0-cli-memory-map.png)
+
+
 The author has now provided **original August screenshots** for this historical archive. The screenshots are selected below, with their exact build identity distinguished from their capture date. The **image files are not yet on GitHub**; download the separately prepared screenshot package and upload the four files to `screenshots/` to enable inline images. No unavailable links are shown as though they were already published.
 
 ### One desktop-era view (version not confirmed)
