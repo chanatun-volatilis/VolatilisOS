@@ -1,25 +1,33 @@
-# Screenshot selection for the V2.0 historical branch
+# Screenshot provenance for the V2.0 historical branch
 
-The author-provided `volaltilis gallery.zip` contains images from several development generations. This branch intentionally selects a narrow subset, all dated August 2026 (Thai Buddhist year 2569).
+**Source:** Images directly uploaded by the project author in the release-archive conversation, dated August **2569** in their names (Thai Buddhist calendar; Gregorian 2026). Every selected file below was inspected, and its SHA-256 calculated from the **original uploaded PNG** bytes. These files are **prepared separately, not yet committed to the GitHub branch**.
 
-| Planned path | Original gallery filename | On-screen evidence | Status |
+## Four selected captures
+
+| Planned path in this branch | Original uploaded filename | SHA-256 of uploaded PNG | How it may be described |
 | --- | --- | --- | --- |
-| `screenshots/august-desktop.png` | `Screenshot 2569-08-09 at 15.10.41.png` | Desktop with blue wallpaper, program launcher, Files window, calculator and image windows | **Selected, not uploaded**. Exact V2.0 build cannot be confirmed |
-| `screenshots/v2.0-cli-editor-vfetch.png` | `Screenshot 2569-08-01 at 15.05.26.png` | Clearly labeled “VolatilisOS v2.0”; editor, `vfetch` and shell version | **Selected, not uploaded** |
-| `screenshots/v2.0-cli-shell-memory.png` | `Screenshot 2569-08-05 at 15.15.51.png` | Clearly labeled “VolatilisOS v2.0”; help, workspaces, filesystem listing and `meminfo` | **Selected, not uploaded** |
+| `screenshots/august-desktop.png` | `Screenshot 2569-08-27 at 12.24.48.png` | `58f03aecbf0b2ebeff3cf39d899a82dcef23f996fbc34d0b6442800f9fe7662a` | August 27 blue GUI with launcher, Welcome and browser. **Version not shown; August-era illustration only** |
+| `screenshots/v2.0-cli-editor-vfetch.png` | `Screenshot 2569-08-01 at 15.05.26.png` | `597dddda44e2e2c2bca88a743842806a265c9c03e1442d27964b8ac6602a1ff8` | Explicit V2.0 text editor and vfetch, VLFS2/VFS overview |
+| `screenshots/v2.0-cli-help-memory.png` | `Screenshot 2569-08-01 at 15.05.49.png` | `0f73e04b6103824030910b20b28344e7ad96a0d781d4fcd0824b201461d118db` | Explicit V2.0 CLI help, workspaces, memory map, `id` |
+| `screenshots/v2.0-cli-memory-map.png` | `Screenshot 2569-08-03 at 07.39.56.png` | `0cec505d895c025ff959214bde6434caee0c0adec47dfe92cfd9aed6a6564c4b` | Explicit V2.0 CLI memory-map and heap details |
 
-The August desktop image is an **era illustration** only. Do not state that its GUI kernel or screenshot came from the recovered V2.0 ISO unless verified separately. The two text screenshots visibly establish version 2.0.
+The screenshot file `Screenshot 2569-08-27 at 12.24.48.png` is the **one desktop selection** for the README. Its version is **not** confirmed even though it is dated August. No source code or ISO can be reconstructed or validated from these screenshots alone.
 
-No September, October, November, V1.5, V2.1 or V2.2 images should be added to this historical gallery. Preserve screenshot authenticity: no artificial labels, recoloring, compositing or invented UI.
+## Other provided August images: deliberately excluded from V2.0 README
 
-## Screenshot integrity for the selected originals
-
-The original PNG bytes were extracted without changing their pixels from the user's gallery ZIP. Use these SHA-256 hashes to verify the eventual GitHub uploads:
-
-| Planned GitHub file | SHA-256 |
+| Original uploaded screenshot | Reason it is not labeled V2.0 |
 | --- | --- |
-| `screenshots/august-desktop.png` | `70c63cedbacf3380171d8d0340465721a46e0aaf2a6255890aa11216ef3edec1` |
-| `screenshots/v2.0-cli-editor-vfetch.png` | `c2fb5e5fc79113cf0e98532ea875f0fd378893037bc70b48a965f334968f86a0` |
-| `screenshots/v2.0-cli-shell-memory.png` | `9685a887696eead2cf85ba76832f479eaa40ff4a29c42305fbb54b9ea1af3e91` |
+| `Screenshot 2569-08-09 at 15.02.13.png` | `vfetch` visibly says **Volatilis OS v1.5**, with `VolatilisShell v1.5` |
+| `Screenshot 2569-08-24 at 12.34.36.png` | `vfetch` visibly says **Volatilis OS v1.5** |
+| `Screenshot 2569-08-09 at 15.03.53.png` | Paint/graphics desktop with no visible OS version; follows an explicitly V1.5 capture in the upload set |
+| `Screenshot 2569-08-23 at 10.50.21.png` | Browser and network utility, no visible OS version; useful August-era context but not version proof |
+| `Screenshot 2569-08-23 at 10.52.01.png` | Paint/image editor windows, no visible version identifier |
+| `Screenshot 2569-08-27 at 12.25.08.png` | Browser/Welcome view, same session as chosen hero; not needed for a one-desktop-image README |
 
-The files have been staged in a separate downloadable `VolatilisOS-V2.0-Beta-screenshots.zip` attachment in the preparation conversation; they are not yet in this GitHub tree. Neither screenshot evidence nor a later-version ISO can substitute for verifying a V2.0 binary before advertising a download.
+## Integrity and publishing
+
+Originals are provided **unmodified** in a separate four-image ZIP for the repository owner to upload. Preserve their screenshot pixels and original aspect ratios. Names in `screenshots/` may be normalized as above for stable Markdown paths.
+
+Do not link to files until the GitHub branch actually contains the corresponding PNG. Once uploaded, copy the Markdown embed snippet from [the upload checklist](UPLOAD_CHECKLIST.md), confirm each image renders, and keep the caption about the desktop version uncertainty.
+
+**No V1.5, V2.1 or V2.2 screenshot should be presented as confirmed V2.0 evidence.**
