@@ -25,17 +25,36 @@ The existence of an installer command does **not** establish that V2.0 can safel
 
 When a matching V2.0 ISO is provided, this section can list its actual filename, size, SHA-256 checksum, verified boot-menu label and a safe QEMU boot command. **No source archive or development files will be included.**
 
-## August 2026 snapshots
+## August 2026 screenshots
 
-The supplied **Volatilis gallery** includes August 2026 captures. The intended *single desktop image* is:
+The author has now provided **original August screenshots** for this historical archive. The screenshots are selected below, with their exact build identity distinguished from their capture date. The **image files are not yet on GitHub**; download the separately prepared screenshot package and upload the four files to `screenshots/` to enable inline images. No unavailable links are shown as though they were already published.
 
-**Desktop candidate:** `Screenshot 2569-08-09 at 15.10.41.png` — blue desktop, launcher, file manager, calculator and image windows. It is dated August, but its precise version is **not independently proven**, so it should be captioned “August 2026 desktop-era snapshot,” not claimed to show a verified V2.0 ISO.
+### One desktop-era view (version not confirmed)
 
-**CLI candidates:**
-- `Screenshot 2569-08-01 at 15.05.26.png` — clearly displays “VolatilisOS v2.0,” `vfetch`, the editor and a V2.0 feature summary.
-- `Screenshot 2569-08-05 at 15.15.51.png` — clearly displays “VolatilisOS v2.0,” command help, workspaces, directory listing and memory information.
+**27 August 2026 — Welcome, web browser and Programs launcher**
 
-These original image files have been **selected for inclusion but have not yet been uploaded** to this branch. The archive will embed exactly one August desktop candidate and up to two of the verified V2.0 text snapshots once binary asset upload is available. Do not use 2.1/2.2 screenshots as V2.0 proof. See [snapshot provenance](docs/SCREENSHOT_PROVENANCE.md).
+`Screenshot 2569-08-27 at 12.24.48.png` shows the blue windowed VolatilisOS desktop, a Welcome window, the graphical web browser and the application launcher. It does **not** show a V2.0 version banner, so it is an **August desktop-era illustration**, not proof that the particular GUI build is V2.0.
+
+**Planned public filename:** `screenshots/august-desktop.png`
+
+### V2.0 command-line interface (version explicitly visible)
+
+| Capture date | Original screenshot | What it demonstrates |
+| --- | --- | --- |
+| **1 August 2026** | `Screenshot 2569-08-01 at 15.05.26.png` | V2.0 editor, `vfetch`, VLFS2 and VFS explanation, and `version` |
+| **1 August 2026** | `Screenshot 2569-08-01 at 15.05.49.png` | V2.0 shell navigation/help, `meminfo`, `mem` and ring-0 permission caveat |
+| **3 August 2026** | `Screenshot 2569-08-03 at 07.39.56.png` | V2.0 `meminfo`, `mem`, `id` and the firmware memory map |
+
+These images visibly label the command-line OS **VolatilisOS v2.0**.
+
+**Planned public filenames:**
+- `screenshots/v2.0-cli-editor-vfetch.png`
+- `screenshots/v2.0-cli-help-memory.png`
+- `screenshots/v2.0-cli-memory-map.png`
+
+I also reviewed the supplied **9 August** and **24 August** images that explicitly show `Volatilis OS v1.5`. They are **not used as V2.0 evidence**. Other August GUI images without visible version markers were not selected because this README keeps just one desktop-era screenshot, as originally requested.
+
+For the exact selected originals, checksums and [upload/embedding instructions](docs/UPLOAD_CHECKLIST.md), see the [screenshot provenance record](docs/SCREENSHOT_PROVENANCE.md).
 
 ## Running historical builds
 
