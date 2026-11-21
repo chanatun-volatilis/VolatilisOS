@@ -8,7 +8,7 @@
 | --- | --- | --- |
 | Gallery screenshot `Screenshot 2569-08-01 at 15.05.26.png` | The screenshot visibly names “VolatilisOS v2.0,” `vsh 2.0`, `vfetch`, VLFS2, a VFS layer, C interpreter, editor and prototype installer | Actual on-disk integrity, date of ISO compilation, successfully tested physical installation |
 | Gallery screenshot `Screenshot 2569-08-05 at 15.15.51.png` | V2.0 text shell, workspaces, help output, `ls`, `meminfo` and memory-map reporting | Exact supported command count or hardware list |
-| Gallery screenshot `Screenshot 2569-08-09 at 15.10.41.png` | An August desktop interface with Japanese launcher, file-manager, images and calculator | Conclusive proof this GUI image was produced by the same V2.0 ISO |
+| Author-uploaded `Screenshot 2569-08-27 at 12.24.48.png` | An August desktop view with Welcome, browser and Programs launcher; selected as the single GUI-era illustration | Conclusive proof this GUI image was produced by the same V2.0 ISO |
 | Uploaded `volatilis-master.iso` | 43,612,160 bytes, SHA-256 `49843b7c441bf1ee20e2a2934f29c624b7d6f0d9ef8427a29485e236c63f2b63`; its GRUB menu and embedded kernel strings say `2.1` | **It is not verified to be V2.0**; therefore it has not been distributed in this branch |
 | `VOS V2.1 Beta.zip` | Contains a `build/volatilis-master.iso` with the exact same SHA-256 as the uploaded ISO | A V2.0 release source tree (this is labeled 2.1) |
 | Existing public `version-2.1` branch | Documents the subsequent 2.1 release as BIOS/live-first and says the older installer was not supported for production | Does not replace direct evidence for 2.0 or prove every older V2.0 command functioned correctly |
