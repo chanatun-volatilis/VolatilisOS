@@ -1,123 +1,124 @@
-# VolatilisOS — GUI edition
+VolatilisOS — GUI Edition
+=========================
 
-A complete windowed **desktop operating system**, written from scratch, that
-boots straight into a 640×480 graphical desktop. It is the graphical branch of
-[VolatilisOS](../volatilisos) — the same hand-written kernel and on-disk
-filesystem underneath, with a desktop inspired by Windows 3.1 and 98 on top:
-overlapping windows, a Start-menu launcher, a mouse pointer, and over twenty
-built-in programs.
+This page introduces the graphical edition of VolatilisOS. For downloads,
+screenshots, published checksums and the newest public documentation, start
+with README.md in this repository.
 
-Everything you see is drawn by the OS itself, one pixel at a time, in 16 colours.
-There is no graphics library, no widget toolkit, and no code from anyone else —
-the window manager, the fonts, the PNG decoder and every app were written for
-this kernel.
+Release line: VolatilisOS 2.2 Beta, "Navy Horizon"
+Development status reference: source-code main at
+9b69ff2ba24901ed98d040f205882a7d3fd5868c (21 November 2026).
 
----
+NOTE: The downloadable ISO here is an uploaded snapshot. The source tree is
+developed separately and can be newer than the uploaded binary.
 
-## What it is
+What it is
+----------
 
-- **A real desktop.** Draggable windows that you can **resize from any edge or
-  corner** — the pointer changes shape (↔, ↕, ⤡, or a grabbing hand) to show
-  what it is about to do — and that snap to the screen edges. A taskbar with a
-  live clock and a power widget, a searchable Start menu, right-click context
-  menus, and a starfield screensaver when you leave it idle.
-- **Over twenty programs**, each written from scratch and all sharing the same
-  real filesystem: Notes, Terminal, Files, a Calculator, a Clock and a Calendar,
-  a Music Composer, a to-do list (Tasks), a Timer & Stopwatch, and games —
-  Minesweeper, 2048, Tic-Tac-Toe and Chess.
-- **Paint & Video Maker.** Draw pictures and save them as real PNG files, or
-  build stop-motion `.vid` movies frame by frame. Both have a **Select tool**:
-  rubber-band a region, then move it, copy/cut/paste it, **flip** it (H/V) or
-  **rotate** it 90°.
-- **It is online.** A from-scratch network stack (ARP / IP / ICMP / UDP / DHCP /
-  DNS) with a Network app that really pings and looks up names.
-- **Five colour themes** (Blue, Teal, Forest, Rose, Midnight) and an optional
-  **Japanese interface**, with a little romaji input method — type `ka` and get か.
-- **Files persist.** Anything you save lives on the disk image between boots, and
-  a second drive shows up as a removable "USB drive" inside the Files window.
+VolatilisOS is an independently developed experimental 32-bit x86 operating
+system. Its GUI edition boots a native windowed desktop. The separate CLI
+edition boots its own text-first kernel. Selected core, filesystem and
+userspace code is shared between the editions; they are not a single kernel
+with a simple graphical toggle.
 
-## Who made this, and why
+The graphical desktop provides moveable windows, taskbar and launcher,
+Settings, Files, Terminal, Text Editor, System Monitor, media viewers,
+calendar/clock utilities and other built-in tools. Some additional programs
+are delivered through VPK packages or ports rather than being written into
+the kernel as built-in applications. The source has a NetSurf browser port
+and DoomGeneric/Freedoom integration; their runtime features and packaging
+must be checked against the particular ISO being used.
 
-VolatilisOS is written by one person — **VOLATILIS** — as a hobby project.
+VolatilisOS began as a solo hobby operating-system project. The goal remains
+to learn and experiment with the boot process, drivers, memory management,
+filesystems, user applications and graphical desktops.
 
-After building the text-based VolatilisOS kernel, the natural next question was:
-*could one person build the whole graphical desktop too — the windows, the mouse,
-the fonts, the paint program, the games — with no libraries at all, straight on
-top of the same kernel?* This is the answer. It exists for the love of making it,
-and to be a readable example of how a desktop really works, from the raw
-framebuffer all the way up to a window you can drag.
+What changed since older GUI documentation
+------------------------------------------
 
-## How to build and run it
+- The original documentation described one giant src/desktop.c and a
+  640x480, 16-colour-only interface. The present source is organized into
+  kernel/core, kernel/services, drivers, graphics, filesystem, networking,
+  libraries, userspace, installer and vscript.
+- The desktop includes newer renderers, compositing, fonts and
+  graphics-device abstractions. Supported sizes/colours depend on the boot
+  environment; do not assume every real graphics card is supported.
+- Networking includes Ethernet, IPv4/IPv6 and TLS development. Wi-Fi user
+  interface and driver groundwork exist, but the current hardware-support
+  path cannot scan or join a wireless network.
+- VFS and storage work extends beyond the older simple filesystem; some
+  external filesystem formats are read-only by design.
+- The GUI is not completely self-contained: third-party ports, packages,
+  fonts and other dependencies retain their respective upstream licenses.
 
-You need **NASM**, **Python 3**, **QEMU**, and a 32-bit-capable **GCC**. On Linux
-the host `gcc` works as-is; on macOS you need the `i686-elf` cross-compiler,
-because Apple's clang cannot build 32-bit x86:
+Safety and compatibility
+------------------------
 
-```sh
-# macOS toolchain
-brew tap nativeos/i686-elf-toolchain
-brew install i686-elf-binutils i686-elf-gcc nasm qemu
-```
+The current source has BIOS installer and QEMU verification paths, but this
+is not a certification to install to real-world disks. Use new disposable
+virtual disks for installation experiments; never risk a disk that stores
+personal data. UEFI live boot has OVMF development evidence, but UEFI
+installation is gated off and Secure Boot is unsupported.
 
-Then build and boot it:
+The supported development guest profile is 32-bit x86 with one CPU. SMP,
+arbitrary hardware support and full Linux/Windows application compatibility
+are not claimed. Real-machine BIOS installed boot is still subject to a
+documented retest in the development release gate.
 
-```sh
-make            # build build/kernel.bin
-make run        # boot it in QEMU, straight into the desktop
-```
+How to try the published GUI ISO
+--------------------------------
 
-Other ways to boot it:
+Install QEMU first. In a directory containing volatilis-gui.iso:
 
-```sh
-make iso            # build a bootable GRUB ISO    (then: make run-iso)
-make img            # build a 1.44 MB floppy image (then: make run-img)
-make run-installed  # boot the installed disk on its own, no ISO/GRUB
-make toolchain      # show which compiler/linker was auto-detected
-make help           # list every target
-make clean          # remove build/ (your disk images are kept)
-```
+    qemu-system-i386 -m 1024 -cdrom volatilis-gui.iso -boot d
 
-The toolchain is detected automatically on Linux and macOS. Force it either way
-with `make CROSS=i686-elf-` (cross-compiler) or `make CROSS=` (host gcc in 32-bit
-mode). On macOS, `make iso` also needs **Docker**, because `grub-mkrescue` has no
-i386-pc target there.
+For the CLI edition:
 
-### First steps once it boots
+    qemu-system-i386 -m 512 -cdrom volatilis-cli.iso -boot d
 
-- Press the **Super (Windows) key**, or click the **▲** button on the taskbar, to
-  open the Start menu. Type to search, then press Enter to open the first match.
-- **Double-click** a desktop icon or a file in Files to open it — a `.png` opens
-  in the Image Viewer, a `.hz` song in the Player, a `.vid` movie in the Video
-  Player, and anything else in Notes.
-- Open **Settings → Personalize** to pick a colour theme or switch the whole
-  desktop into Japanese.
+For the master selection menu, unpack volatilis-master.iso.zip and boot
+volatilis.iso with QEMU. These commands do not attach a host physical disk.
 
-## Source layout
+Source code and build instructions
+----------------------------------
 
-```
-src/
-  desktop.c         the entire GUI: window manager, taskbar, launcher, and
-                    every app — the biggest file in the project
-  gfx.c mouse.c     the drawing routines and the mouse cursor
-  png.c jpeg.c      image decoders (Paint saves real PNGs)
-  font8x16.c        the text-console font
-  font16x16.c       the desktop UI font
-  font16x16_kanji.c the Japanese glyphs for the Japanese interface
-  kernel.c          boot, command dispatch, system setup
-  fs.c realfs.c     the on-disk filesystem
-  fat32.c usbdrive.c reading other computers' FAT disks; the "USB drive"
-  shell.c           the shell behind the Terminal app
-  net.c rtl8139.c   the network stack and the NIC driver
-  disk.c drivers.c  ATA disk, VGA/keyboard/PCI
-  heap.c paging.c   the kernel heap and memory protection
-  task.c elf.c      the scheduler and the ELF loader
-  compiler.c vscript.c  the built-in C interpreter and the Vscript language
-  music.c pong.c snake.c  the PC-speaker synth and a couple of games
+This public repository primarily provides release images and screenshots.
+The current authoritative source lives in a separate *private* repository:
 
-boot/               the bootloaders and entry stubs (multiboot + floppy + HDD)
-user/               standalone ring-3 programs (hello.c, count.c, …) + a tiny libc
-include/            the shared kernel headers
-uefi/               an experimental UEFI boot path
-```
+    https://github.com/chanatun-volatilis/VolatilisOS-source-code
 
-VolatilisOS is released under the **MIT License**. Built by VOLATILIS.
+If you have access, build commands in that source checkout include:
+
+    make toolchain
+    make kernels
+    make iso
+    make run
+    make check-iso QA_TIMEOUT=90
+
+These commands do NOT run from the public image-only repository.
+They are for developers with the private source and an appropriate toolchain.
+Source tests should distinguish PASS, FAILED, BLOCKED and NOT TESTED; QEMU
+success does not imply physical-hardware certification.
+
+Current public documentation
+----------------------------
+
+    README.md                     overview, screenshots and current downloads
+    docs/CURRENT_STATUS.md       source-based feature and limitation matrix
+    docs/ARCHITECTURE.md         current kernel, services and source structure
+    docs/BUILD_AND_TEST.md       build requirements and verification workflows
+    docs/RELEASE_AND_SAFETY.md  ISO verification and safe trial guidelines
+
+Copyright and licensing
+-----------------------
+
+The source repository states:
+
+    Copyright (C) 2025-2026 Chanatun Volatilis Poolcharuansin.
+    All rights reserved.
+
+Do not assume MIT licensing. Public downloads are not a license grant for
+the underlying source; dependencies and third-party ports have their own
+license terms.
+
+For the current overview and project links, see README.md.
