@@ -5,6 +5,8 @@
 **Source reference:** `chanatun-volatilis/VolatilisOS-source-code` `main` at `9b69ff2ba24901ed98d040f205882a7d3fd5868c`  
 **Scope:** A documentation review of the source and its test/release notes, **not** a fresh build, VM run, or physical-hardware certification.
 
+> **Published ISOs:** the GUI, CLI and master ISOs in this repository were rebuilt on 22 November 2026 from source commit `34ee203abceef20a25a5e45f52ed1ae16f2500e1` and boot to the desktop / shell in QEMU. The table below was written against the slightly older `9b69ff2` review, plus the additions listed in the [README](../README.md#whats-new-in-the-22-november-2026-build).
+
 > **Important distinction:** This public repository distributes prebuilt ISO files and screenshots. The separately maintained source repository is currently private. Its development status can move ahead of the prebuilt ISOs here. A capability described below is **not automatically guaranteed** to be present in the binary downloads; rebuild or verify the particular artifact to establish that.
 
 ## What exists today
@@ -15,8 +17,9 @@
 | Desktop | Native GUI, window management, compositing, Settings, Files, Terminal, Text Editor, many built-in utilities | Feature coverage varies by boot edition and graphics device |
 | CLI | Text-first shell, commands, storage and recovery tooling | Different kernel from the GUI edition; not merely a launch option within one shared kernel |
 | Storage | VFS, VLFS2, FAT16/FAT32 read/write, partition discovery and block-device layer | VLFS2 newly installed volumes may lack a journal until enabled; use throwaway disks for testing |
-| Filesystem readers | ext2/3/4, exFAT, NTFS read-only paths | Do **not** rely on write support; filesystem and file-size limits apply |
-| Disk interfaces | IDE/ATA, AHCI, NVMe, USB xHCI Bulk-Only mass storage and removable-media compatibility | Coverage is hardware-specific; QEMU verification does not certify real controllers |
+| Filesystem readers | ext2/3/4, exFAT, NTFS and ISO 9660 (`.iso` images) read-only paths | Do **not** rely on write support; filesystem and file-size limits apply |
+| Disk interfaces | IDE/ATA, AHCI, NVMe, USB xHCI Bulk-Only mass storage and removable-media compatibility |
+| USB input | USB keyboards and mice on xHCI and EHCI (USB 2.0) controllers, including devices behind USB hubs and combined keyboard-and-mouse receivers | Real-laptop coverage is limited; some controllers and receivers may still not work | Coverage is hardware-specific; QEMU verification does not certify real controllers |
 | Install and recovery | BIOS installed-disk flow, GUI Setup and CLI installer, disk checks, two-edition boot, file persistence in QEMU | **Not certified safe for real-user disks**; UEFI installation is gated off |
 | UEFI | IA32 and x64 UEFI live-boot paths have OVMF/QEMU evidence | UEFI **installation** unavailable; Secure Boot not supported |
 | Networking | IPv4/IPv6, ARP, DHCP, DNS, TCP/UDP, socket and TLS implementations; multiple Ethernet drivers | Networking features are incremental; no claim of support for arbitrary physical NICs |

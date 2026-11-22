@@ -6,8 +6,9 @@ screenshots, published checksums and the newest public documentation, start
 with README.md in this repository.
 
 Release line: VolatilisOS 2.2 Beta, "Navy Horizon"
-Development status reference: source-code main at
-9b69ff2ba24901ed98d040f205882a7d3fd5868c (21 November 2026).
+ISO build: 22 November 2026, from source-code main at
+34ee203abceef20a25a5e45f52ed1ae16f2500e1. See README.md, section
+"What's new in the 22 November 2026 build".
 
 NOTE: The downloadable ISO here is an uploaded snapshot. The source tree is
 developed separately and can be newer than the uploaded binary.

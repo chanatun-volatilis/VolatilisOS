@@ -2,11 +2,12 @@
 
 **VolatilisOS** is an independently developed, experimental **32-bit x86 operating system** with two bootable editions: a graphical desktop (**GUI**) and a text-first command environment (**CLI**). The project began when I was 12, out of an interest in low-level programming, kernels and operating systems.
 
-The current **published download line** is **VolatilisOS 2.2 Beta — “Navy Horizon”**. Development continues separately in the source repository. **The ISO files here are prebuilt snapshots; they do not update automatically when the source code changes.**
+The current **published download line** is **VolatilisOS 2.2 Beta — “Navy Horizon”**. The ISO files here were last rebuilt on **22 November 2026** from source commit `34ee203` (see [What's new in this build](#whats-new-in-the-22-november-2026-build)). Development continues separately in the source repository. **The ISO files here are prebuilt snapshots; they do not update automatically when the source code changes.**
 
 | | |
 | --- | --- |
 | **Published version** | 2.2 Beta — *Navy Horizon* |
+| **ISO build date** | 22 November 2026, from source commit `34ee203abceef20a25a5e45f52ed1ae16f2500e1` |
 | **Editions** | GUI, CLI, and a master ISO containing both |
 | **CPU architecture** | 32-bit x86 / i686 |
 | **Recommended first boot** | QEMU or a legacy-BIOS virtual machine |
@@ -28,20 +29,33 @@ These files are present in this public repository. Choose the edition you want:
 | --- | --- | --- |
 | [`volatilis-gui.iso`](volatilis-gui.iso) | Standalone graphical desktop | 44 MB |
 | [`volatilis-cli.iso`](volatilis-cli.iso) | Standalone text-first edition | 10 MB |
-| [`volatilis-master.iso.zip`](volatilis-master.iso.zip) | Both editions with a GRUB selection menu and installer paths; **unzip before booting** | 66 MB ZIP, about 128 MB uncompressed |
+| [`volatilis-master.iso.zip`](volatilis-master.iso.zip) | Both editions with a GRUB selection menu and installer paths; **unzip before booting** | 67 MB ZIP, about 129 MB uncompressed |
 
-**Published SHA-256 checksums** (copied from the existing release README; **not independently rehashed during this documentation update**):
+**SHA-256 checksums** (calculated for the 22 November 2026 build):
 
 ```text
-9aa0dc8badd7a3eb209b762fe23a4f183d8bda6010aba0c7f12da6f3b71612b5  volatilis-gui.iso
-61c319ccdfc1813f437bc995e2c0cff74955ac1ea092c14778d8f4680d41817a  volatilis-cli.iso
-71a2f3a9aaa3c88b476715db220e969fda5efc7e9c12e5b61d1d62698cb351d5  volatilis-master.iso.zip
-b08f9500ae44a19022802d6476edf847b3bd8566fbeb527e233598543bd7ae94  volatilis.iso (inside ZIP)
+e90215a62118e2f80609417321dab4c6d7bc9420b25bcf53a86badfa8c254ba1  volatilis-gui.iso
+3bc47ce8d31c2287ff71f25213696e10da0bb87c6a137e53301b690aed4fedaa  volatilis-cli.iso
+f493451019d2b4c8ceb29435f6de37d1c9de979b278735a4cae972cf7504fef0  volatilis-master.iso.zip
+e67af851d975d0b44abb51cedc1c58f9063f143774404d173cf8180313da24e2  volatilis.iso (inside ZIP)
 ```
 
 To calculate a downloaded file's checksum, use `sha256sum <filename>` on Linux or `shasum -a 256 <filename>` on macOS and compare it with the corresponding published value. A checksum is **not** a digital signature.
 
 **Older release:** VolatilisOS 2.1 (without the newer installer flow) is archived on the [`version-2.1` branch](https://github.com/chanatun-volatilis/VolatilisOS/tree/version-2.1).
+
+## What's new in the 22 November 2026 build
+
+This rebuild of the 2.2 Beta ISOs brings in the newest work from the source repository:
+
+- **Clean, factory-fresh discs.** The ISOs no longer carry any of the creator's own settings, accounts or files. Every disc now boots into factory settings, and the build refuses to finish if any personal state slips onto the disc.
+- **USB mouse fix on older laptops.** VolatilisOS can now drive **EHCI (USB 2.0)** controllers and **USB hubs**, so a USB mouse that sits behind a hub works. Combined keyboard-and-mouse wireless receivers now have both halves (keyboard *and* mouse) working.
+- **Setup opens as a desktop window.** On the live desktop, *Install VolatilisOS* now opens Setup as a normal window instead of taking over the whole screen, and it is drawn in the same style as Settings and the other redesigned apps.
+- **Modernized on-screen keyboard.** The screen keyboard was rebuilt with a full layout, bigger keys and the system theme's look. Keys now have 3D depth and visibly push in when pressed.
+- **New "3D buttons" setting.** An optional setting gives buttons a keyboard-key look with a short press animation. It is off by default.
+- **Read-only `.iso` support.** VolatilisOS can now open ISO 9660 disc images (`.iso` files) and browse the files inside them. This is **read-only**: you can look at and copy files out, but not change the image.
+
+Still experimental: please keep testing in a virtual machine, as described below.
 
 ## Run it safely
 
@@ -75,7 +89,7 @@ The **current source tree** also contains a substantially expanded architecture:
 
 ## Screenshots
 
-These pictures show the **published GUI build** and its desktop applications. They are not proof that a newer source change is present in the downloadable ISO.
+These pictures show **earlier published GUI builds** and its desktop applications. They are not proof that a newer source change is present in the downloadable ISO.
 
 ### Desktop and menus
 
