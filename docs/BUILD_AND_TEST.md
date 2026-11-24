@@ -23,7 +23,37 @@ For installed-disk experiments, create a **new disposable QEMU image** and expli
 
 ## Developer prerequisites
 
-If you have source access, use Linux or macOS with GNU Make, Python 3, NASM, QEMU i386, GRUB tools and xorriso. Windows is supported through WSL 2, which runs that same Linux build pipeline; native MSVC compilation is not supported. The preferred compiler is `i686-elf-gcc`; Linux GCC with working `-m32`/multilib may be used for existing supported targets. Installed-disk QEMU tests additionally need `qemu-img`. Extra checks may need mtools, sgdisk, exfat tools and related utilities. Missing dependencies are **blocked or not tested**, not successful checks.
+If you have source access, use Linux or macOS with GNU Make, Python 3, NASM, QEMU i386, GRUB tools and xorriso. Windows is supported through WSL 2, which runs that same Linux build pipeline; native MSVC compilation is not supported. The full ISO requires a genuine bare-metal `i686-elf` C/C++ compiler and binutils, including target libgcc. Linux GCC with working `-m32`/multilib may be used for kernel-only targets, not the full SDK and bundled applications. Installed-disk QEMU tests additionally need `qemu-img`. Extra checks may need mtools, sgdisk, exfat tools and related utilities. Missing dependencies are **blocked or not tested**, not successful checks.
+
+## Updated Linux build procedure (development source)
+
+For Kali, Debian, Ubuntu and apt-based WSL 2, run from the **source** repository:
+
+```sh
+git pull origin main
+./build.sh --setup-linux
+# Subsequent ISO builds:
+./build.sh
+```
+
+For a fresh checkout, clone the private source repository first. Setup installs
+host packages with apt, builds pinned binutils 2.44/GCC 14.2.0 if needed,
+and verifies the Freedoom archive. The host GCC bootstrap explicitly uses
+GNU C++11 for compatibility with GCC 14's bundled libcody. On machines with
+limited RAM, set `VOS_TOOLCHAIN_JOBS=2` before setup. Do not run the whole
+build as root.
+
+For direct Make or SDK targets, if installed at the default location:
+
+```sh
+export PATH="${VOS_TOOLCHAIN_DIR:-$HOME/i686-elf}/bin:$PATH"
+make toolchain
+```
+
+On macOS follow the source's Homebrew instructions and fetch the pinned
+Freedoom archive before building the full ISO. WSL users should run the Linux
+setup inside the distribution. These newer setup instructions are not evidence
+of a completed new ISO build; see the source's `docs/build/BUILDING.md`.
 
 ## Building from the source checkout
 

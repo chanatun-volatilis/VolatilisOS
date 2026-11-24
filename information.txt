@@ -104,6 +104,11 @@ If you have access, build commands in that source checkout include:
 
 These commands do NOT run from the public image-only repository.
 They are for developers with the private source and an appropriate toolchain.
+For current Kali/Debian/Ubuntu source builds, first run
+    ./build.sh --setup-linux
+and then ./build.sh for subsequent ISO builds. The full ISO needs the real
+i686-elf SDK toolchain; host GCC -m32 alone is not enough.
+See docs/THIRD_PARTY_SOFTWARE.md for the native DoomGeneric/Freedoom port.
 Source tests should distinguish PASS, FAILED, BLOCKED and NOT TESTED; QEMU
 success does not imply physical-hardware certification.
 

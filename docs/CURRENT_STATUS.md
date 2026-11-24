@@ -29,6 +29,20 @@
 | Development tooling | VScript compiler/interpreter, C/C++ components, native SDK, VPK packages, third-party port recipes; Linux/macOS Make builds and a Windows WSL 2 bridge | Not full compatibility with desktop Linux apps or their dependencies; native MSVC builds are unsupported |
 | Testing | Host core/package/icon/render checks; QEMU smoke, ISO-menu, installed-input and eight-scenario installed-disk verification run for this upload | QEMU evidence is not physical-hardware certification |
 
+## Later development notes
+
+Source main at `df2cc1110983fc69296b5ceb2afd68665d92dcdd` is ahead of
+the published ISO baseline. This update describes source changes, not newly
+built or revalidated public images.
+
+| Area | Later source development | Limits |
+| --- | --- | --- |
+| VOSCast | Opt-in browser desktop viewing over HTTP; session token, pause/stop and bounded frame rate | View-only, one client, isolated network only; no TLS or remote input |
+| Device diagnostics | Settings displays PCI driver binding/probe state; live firmware USB-mouse fallback | Physical input retest remains necessary |
+| Third-party apps | Native DoomGeneric/Freedoom via ABI-3 surfaces, VPK and separate WAD; see [port notes](THIRD_PARTY_SOFTWARE.md) | No complete Doom audio, multiplayer or save/load |
+| Build portability | Apt-based dependency setup, pinned i686-elf cross build, C++11 host bootstrap | Full new Kali ISO build not independently verified here |
+| VM display integration | Existing virtual graphics drivers and manual mode changes | Automatic host-window resizing and guest additions are not claimed |
+
 ## Boot and release readiness
 
 Source documentation distinguishes **working emulator paths** from **verified physical hardware**. It describes BIOS/GRUB boot and disk-only BIOS installation in QEMU, and both UEFI loader variants in OVMF. An installed UEFI disk is **not** a supported installation workflow. Secure Boot is **off/unsupported**.

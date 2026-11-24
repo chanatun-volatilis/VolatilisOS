@@ -16,7 +16,7 @@ The current **published download line** is **VolatilisOS 2.2 Beta — “Navy Ho
 
 **Current technical status:** [What works and what's unfinished](docs/CURRENT_STATUS.md) · [Architecture](docs/ARCHITECTURE.md) · [Build and test](docs/BUILD_AND_TEST.md) · [Download & installation safety](docs/RELEASE_AND_SAFETY.md)
 
-Development-source status on these pages was refreshed **24 November 2026**, against the same commit used for these images. It describes the source tree and verification performed for this upload; physical-hardware support is still not certified.
+The original ISO verification below refers to source commit `549e6d45`. The development notes also describe later source work through `df2cc111`; these notes do not establish that the downloadable images contain the later changes. Physical-hardware support is still not certified.
 
 ![A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu all open at once](screenshots/system-monitor-and-terminal.png)
 *A graphical VolatilisOS desktop with Text Editor, Terminal, System Monitor and the folder menu.*
@@ -92,9 +92,39 @@ The **current source tree** also contains a substantially expanded architecture:
 
 **Not finished / not certified:** Wi-Fi cannot currently scan or join networks using the implemented radio driver; UEFI installation and Secure Boot are unsupported; broad real-GPU acceleration and SMP are not implemented; installer safety on physical drives has not been certified. Some library/port features are partial, and hardware-specific behavior varies. See the [status matrix](docs/CURRENT_STATUS.md) for evidence and limits.
 
+## Native applications and third-party ports
+
+VolatilisOS uses its own C/C++ cross-development SDK, ELF loader, versioned
+ABI and VPK package manager to run native applications. The development tree
+includes the NetSurf browser, Calculator and DoomGeneric/Freedoom integration.
+
+**DoomGeneric and Freedoom:** the native i386 ELF engine runs in userspace,
+not in a DOS or Linux emulator. A C backend presents 320 × 200 indexed-color
+frames to the VOS compositor, with windowed and fullscreen rendering,
+keyboard input and relative mouse capture. Freedoom 0.13.0 Phase 2 supplies
+the freely licensed game resources separately at `/share/freedoom2.wad`.
+Doom sound, multiplayer and reliable save/load remain unfinished.
+
+```text
+exec doomgeneric.elf -iwad /share/freedoom2.wad -nosound
+```
+
+See [Third-party software](docs/THIRD_PARTY_SOFTWARE.md) for the packaging,
+test evidence and limitations.
+
+## Later development updates (not yet a new ISO publication)
+
+The source has progressed beyond the published build: experimental VOSCast
+view-only browser streaming on isolated test networks, improved device and
+pointer diagnostics, desktop/menu rendering changes, and Linux ISO bootstrap
+improvements. The apt-based setup uses the pinned i686-elf toolchain and
+explicit C++11 host compilation for GCC 14.2.0's libcody. See
+[Build and test](docs/BUILD_AND_TEST.md) for the updated instructions.
+Automatic VM window resizing is not claimed as implemented.
+
 ## Screenshots
 
-These pictures show **earlier published GUI builds** and its desktop applications. They are not proof that a newer source change is present in the downloadable ISO.
+These pictures show GUI builds and desktop applications. Screenshots may represent a different development snapshot from the published ISO and are not evidence that every feature is present in that download.
 
 ### Desktop and menus
 
