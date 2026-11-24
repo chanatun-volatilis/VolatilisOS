@@ -18,9 +18,6 @@ The current **published download line** is **VolatilisOS 2.2 Beta — “Navy Ho
 
 The original ISO verification below refers to source commit `549e6d45`. The development notes also describe later source work through `df2cc111`; these notes do not establish that the downloadable images contain the later changes. Physical-hardware support is still not certified.
 
-![A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu all open at once](screenshots/system-monitor-and-terminal.png)
-*A graphical VolatilisOS desktop with Text Editor, Terminal, System Monitor and the folder menu.*
-
 ## Download — 2.2 Beta “Navy Horizon”
 
 These files are present in this public repository. Choose the edition you want:
@@ -131,44 +128,107 @@ These pictures show GUI builds and desktop applications. Screenshots may represe
 
 These are development screenshots supplied by the project creator. They are not a certification of a specific downloadable ISO.
 
-| | |
-| --- | --- |
-| ![Freedoom running with System Monitor, Calendar and Clock](screenshots/freedoom-desktop-system-monitor.png) Native DoomGeneric/Freedoom and desktop utilities | ![VolatilisOS Setup and cascading folder menus](screenshots/setup-and-cascading-folder-menu.png) Windowed Setup and hierarchical file navigation |
-| ![Freedoom difficulty selection and cascading desktop menus](screenshots/freedoom-skill-selection-and-folder-menu.png) Freedoom in a movable desktop window | |
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/freedoom-desktop-system-monitor.png"><img src="screenshots/freedoom-desktop-system-monitor.png" alt="Freedoom running with System Monitor, Calendar and Clock" width="400"></a><br>
+      Native DoomGeneric/Freedoom and desktop utilities
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/setup-and-cascading-folder-menu.png"><img src="screenshots/setup-and-cascading-folder-menu.png" alt="VolatilisOS Setup and cascading folder menus" width="400"></a><br>
+      Windowed Setup and hierarchical file navigation
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/freedoom-skill-selection-and-folder-menu.png"><img src="screenshots/freedoom-skill-selection-and-folder-menu.png" alt="Freedoom difficulty selection and cascading desktop menus" width="400"></a><br>
+      Freedoom in a movable desktop window
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/system-monitor-and-terminal.png"><img src="screenshots/system-monitor-and-terminal.png" alt="Text Editor, Terminal, System Monitor and desktop folder menu" width="400"></a><br>
+      Full desktop workspace
+    </td>
+  </tr>
+</table>
 
 <!-- END VOS NOVEMBER 24 DEMOS -->
 
 ### Desktop and menus
 
-| | |
-| --- | --- |
-| ![Right-click folder menu on the desktop](screenshots/desktop-folder-menu.png) Right-click a desktop folder menu | ![Start menu with Applications](screenshots/start-menu-applications.png) Applications in the launcher |
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/desktop-folder-menu.png"><img src="screenshots/desktop-folder-menu.png" alt="Right-click folder menu on the desktop" width="400"></a><br>
+      Right-click a desktop folder menu
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/start-menu-applications.png"><img src="screenshots/start-menu-applications.png" alt="Start menu with Applications" width="400"></a><br>
+      Applications in the launcher
+    </td>
+  </tr>
+</table>
 
 ### Settings and file management
 
-| | |
-| --- | --- |
-| ![Settings overview](screenshots/settings-overview.png) Settings overview | ![Storage settings and folder menu](screenshots/storage-settings-and-folder-menu.png) Storage settings and the folder menu |
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/settings-overview.png"><img src="screenshots/settings-overview.png" alt="Settings overview" width="400"></a><br>
+      Settings overview
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/storage-settings-and-folder-menu.png"><img src="screenshots/storage-settings-and-folder-menu.png" alt="Storage settings and folder menu" width="400"></a><br>
+      Storage settings and the folder menu
+    </td>
+  </tr>
+</table>
 
 ### Files and system monitor
 
-| | |
-| --- | --- |
-| ![Files and System Monitor](screenshots/files-and-system-monitor.png) Files and System Monitor | ![System Monitor and terminal](screenshots/text-editor-terminal-and-start-menu.png) Launcher, Text Editor and Terminal |
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/files-and-system-monitor.png"><img src="screenshots/files-and-system-monitor.png" alt="Files and System Monitor" width="400"></a><br>
+      Files and System Monitor
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/text-editor-terminal-and-start-menu.png"><img src="screenshots/text-editor-terminal-and-start-menu.png" alt="System Monitor and terminal" width="400"></a><br>
+      Launcher, Text Editor and Terminal
+    </td>
+  </tr>
+</table>
 
 ### Text editor and terminal
 
-| | |
-| --- | --- |
-| ![Text Editor](screenshots/text-editor.png) Tabbed Text Editor with syntax highlighting | ![Terminal running vfetch](screenshots/terminal-vfetch-and-folder-menu.png) Terminal with `vfetch` and `meminfo` |
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/text-editor.png"><img src="screenshots/text-editor.png" alt="Text Editor" width="400"></a><br>
+      Tabbed Text Editor with syntax highlighting
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/terminal-vfetch-and-folder-menu.png"><img src="screenshots/terminal-vfetch-and-folder-menu.png" alt="Terminal running vfetch" width="400"></a><br>
+      Terminal with <code>vfetch</code> and <code>meminfo</code>
+    </td>
+  </tr>
+</table>
 
 ### Redesigned apps: Image Viewer, Video Player, Calendar and Clock
 
 These two pictures show the redesigned media and time apps from the **development source**. A redesign shown here may not be in the published 2.2 ISO yet.
 
-| | |
-| --- | --- |
-| ![Redesigned apps, picture 1](screenshots/apps-redesign-1.png) Redesigned apps (1 of 2) | ![Redesigned apps, picture 2](screenshots/apps-redesign-2.png) Redesigned apps (2 of 2) |
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/apps-redesign-1.png"><img src="screenshots/apps-redesign-1.png" alt="Redesigned apps, picture 1" width="400"></a><br>
+      Redesigned apps (1 of 2)
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/apps-redesign-2.png"><img src="screenshots/apps-redesign-2.png" alt="Redesigned apps, picture 2" width="400"></a><br>
+      Redesigned apps (2 of 2)
+    </td>
+  </tr>
+</table>
 
 ## Source code and documentation
 
