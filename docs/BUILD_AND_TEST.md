@@ -2,7 +2,7 @@
 
 This public repository contains **prebuilt images and screenshots**, not the authoritative current kernel source. The build commands on this page apply to the separate [VolatilisOS source repository](https://github.com/chanatun-volatilis/VolatilisOS-source-code), which is currently private; a GitHub 404 or failed clone may simply mean you do not have access.
 
-**Reviewed source baseline:** `9b69ff2ba24901ed98d040f205882a7d3fd5868c` (21 November 2026). Recheck build targets if working from a later commit.
+**Published source baseline:** `549e6d454157675664eeb416975f50d8742b29f4` (24 November 2026). Recheck build targets if working from a later commit.
 
 ## Quick start without source access
 
@@ -23,7 +23,7 @@ For installed-disk experiments, create a **new disposable QEMU image** and expli
 
 ## Developer prerequisites
 
-If you have source access, use Linux or macOS with GNU Make, Python 3, NASM, QEMU i386, GRUB tools and xorriso. The preferred compiler is `i686-elf-gcc`; Linux GCC with working `-m32`/multilib may be used for existing supported targets. Installed-disk QEMU tests additionally need `qemu-img`. Extra checks may need mtools, sgdisk, exfat tools and related utilities. Missing dependencies are **blocked or not tested**, not successful checks.
+If you have source access, use Linux or macOS with GNU Make, Python 3, NASM, QEMU i386, GRUB tools and xorriso. Windows is supported through WSL 2, which runs that same Linux build pipeline; native MSVC compilation is not supported. The preferred compiler is `i686-elf-gcc`; Linux GCC with working `-m32`/multilib may be used for existing supported targets. Installed-disk QEMU tests additionally need `qemu-img`. Extra checks may need mtools, sgdisk, exfat tools and related utilities. Missing dependencies are **blocked or not tested**, not successful checks.
 
 ## Building from the source checkout
 
@@ -39,6 +39,13 @@ make run-iso            # master ISO guest
 make run-img            # raw image guest
 ```
 
+On Windows PowerShell with WSL 2 installed:
+
+```powershell
+.\scripts\development\build-windows.ps1 -Target toolchain
+.\scripts\development\build-windows.ps1 -Target rebuild-all
+```
+
 Generated files include `build/kernel-gui`, `build/kernel-cli`, `build/volatilis-master.iso`, `build/backups/volatilis-gui.iso`, `build/backups/volatilis-cli.iso`, and `build/os.img`. The source checkout may also have persistent VM images; **do not run two writable VMs against the same image**.
 
 For a clean release reconstruction, source documentation also describes `make rebuild-all`. Consult the source's `docs/build/BUILDING.md` and `Makefile` for the exact current targets.
@@ -50,12 +57,14 @@ python3 tools/qa/host_check.py       # host test matrix; status can be pass/fail
 make smoke-iso                       # standalone GUI/CLI rescue ISO boots
 make check-iso QA_TIMEOUT=90         # master ISO selects both editions
 make check-installed QA_TIMEOUT=90   # BIOS disk-only install/persistence checks
+make mouseinstalledguest             # pointer movement/clicks after installed boot
+make touchpadcheck                    # Synaptics pressure/motion/tap/scroll packets
 make check-two-disk                  # nontarget disk safety fixtures
 make qa-report                       # summarize provenance and results
 make release-gate                    # decide NO-GO / PRERELEASE / RELEASE CANDIDATE
 ```
 
-**These are instructions, not newly executed results.** Availability varies with the host toolchain and environment. A linked kernel is not proof of a successful boot; an emulator pass is not proof of safe physical-hardware installation. `make release-gate` does not publish a build.
+The 24 November public artifacts were built from the baseline above. Their release run passed `run-core`, `vpkcheck`, both kernels, smoke, standalone ISO smoke, the four-scenario ISO suite, the eight-scenario installed suite, installed pointer checks, icon/theme checks and rendering checks. Availability still varies with the host toolchain. A linked kernel is not proof of a successful boot; an emulator pass is not proof of safe physical-hardware installation. `make release-gate` does not publish a build.
 
 Useful source references (if you have permission): `docs/QA_REPORT.md`, `docs/RELEASE_GATE.md`, `docs/HARDWARE_PREFLIGHT.md`, `docs/INSTALLER_STATE_MACHINE.md`, and `docs/development/CONTRIBUTING.md`.
 

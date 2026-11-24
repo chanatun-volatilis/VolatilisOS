@@ -1,6 +1,6 @@
 # VolatilisOS architecture overview
 
-This is a short, public-facing tour of the current source layout, reviewed against `VolatilisOS-source-code` `main` at `9b69ff2ba24901ed98d040f205882a7d3fd5868c` (21 November 2026). Source access may be restricted. Paths refer to the **source repository**, not the prebuilt-binary repository you are reading.
+This is a short, public-facing tour of the current source layout, reviewed against `VolatilisOS-source-code` `main` at `549e6d454157675664eeb416975f50d8742b29f4` (24 November 2026). Source access may be restricted. Paths refer to the **source repository**, not the prebuilt-binary repository you are reading.
 
 ## Two editions, two kernels
 
@@ -56,11 +56,13 @@ Userspace programs use ELF loading, a shared/versioned system-call ABI and the s
 
 ## Subsystem notes
 
-**Boot:** A master ISO selects editions through GRUB. The supported installed-disk path is BIOS-first and has QEMU boot/persistence evidence. UEFI live boot can work under OVMF; UEFI installation and Secure Boot are not release-ready.
+**Boot:** A master ISO selects GUI/CLI live boot and graphical/command-line installation through GRUB. The supported installed-disk path is BIOS-first and has QEMU boot/persistence evidence. UEFI live boot can work under OVMF; UEFI installation and Secure Boot are not release-ready.
 
 **Storage:** The block layer exposes disk capabilities and 512-byte compatibility sector operations; partition code validates MBR/GPT and filesystem code provides VFS mounts. Disk writes, cache barriers and installer planning are safety-critical. Larger disks and native 4 KiB media require explicit supported paths and bounds checks.
 
-**Desktop:** The window manager, compositor, graphics/card layers and built-in applications are independently organized. The current desktop is not simply a fixed 640×480 16-colour framebuffer: supported modes and rendering formats vary with virtual graphics adapters and firmware framebuffers.
+**Desktop:** The window manager, compositor, graphics/card layers and built-in applications are independently organized. The current desktop is not simply a fixed 640×480 16-colour framebuffer: supported modes and rendering formats vary with virtual graphics adapters and firmware framebuffers. One role-based icon manager serves the desktop and applications across the selectable themes.
+
+**Input:** PS/2, Synaptics, VirtualBox/VMware absolute-pointer and USB HID paths feed the shared pointer state. Firmware USB handoff is followed by an i8042 resynchronization before VM and USB pointer protocols are enabled, preventing partial firmware-emulated packets from poisoning an installed boot.
 
 **Network:** Ethernet/TCP/IP functionality and TLS are present; the request system can schedule compatible work concurrently. Wireless UI and security code do not imply a working radio driver. NetSurf is a third-party browser port packaged through the OS's application system.
 

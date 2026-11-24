@@ -2,12 +2,12 @@
 
 **VolatilisOS** is an independently developed, experimental **32-bit x86 operating system** with two bootable editions: a graphical desktop (**GUI**) and a text-first command environment (**CLI**). The project began when I was 12, out of an interest in low-level programming, kernels and operating systems.
 
-The current **published download line** is **VolatilisOS 2.2 Beta — “Navy Horizon”**. The ISO files here were last rebuilt on **22 November 2026** from source commit `34ee203` (see [What's new in this build](#whats-new-in-the-22-november-2026-build)). Development continues separately in the source repository. **The ISO files here are prebuilt snapshots; they do not update automatically when the source code changes.**
+The current **published download line** is **VolatilisOS 2.2 Beta — “Navy Horizon”**. The ISO files here were rebuilt on **24 November 2026** from source commit `549e6d45` (see [What's new in this build](#whats-new-in-the-24-november-2026-build)). Development continues separately in the source repository. **The ISO files here are prebuilt snapshots; they do not update automatically when the source code changes.**
 
 | | |
 | --- | --- |
 | **Published version** | 2.2 Beta — *Navy Horizon* |
-| **ISO build date** | 22 November 2026, from source commit `34ee203abceef20a25a5e45f52ed1ae16f2500e1` |
+| **ISO build date** | 24 November 2026, from source commit `549e6d454157675664eeb416975f50d8742b29f4` |
 | **Editions** | GUI, CLI, and a master ISO containing both |
 | **CPU architecture** | 32-bit x86 / i686 |
 | **Recommended first boot** | QEMU or a legacy-BIOS virtual machine |
@@ -16,7 +16,7 @@ The current **published download line** is **VolatilisOS 2.2 Beta — “Navy Ho
 
 **Current technical status:** [What works and what's unfinished](docs/CURRENT_STATUS.md) · [Architecture](docs/ARCHITECTURE.md) · [Build and test](docs/BUILD_AND_TEST.md) · [Download & installation safety](docs/RELEASE_AND_SAFETY.md)
 
-Development-source status on these pages was reviewed **21 November 2026**, against commit `9b69ff2ba24901ed98d040f205882a7d3fd5868c`. It describes the source tree, **not guaranteed features of every uploaded binary**.
+Development-source status on these pages was refreshed **24 November 2026**, against the same commit used for these images. It describes the source tree and verification performed for this upload; physical-hardware support is still not certified.
 
 ![A full workspace: Text Editor, Terminal, System Monitor and the desktop folder menu all open at once](screenshots/system-monitor-and-terminal.png)
 *A graphical VolatilisOS desktop with Text Editor, Terminal, System Monitor and the folder menu.*
@@ -27,26 +27,31 @@ These files are present in this public repository. Choose the edition you want:
 
 | Download | Description | Approximate size |
 | --- | --- | --- |
-| [`volatilis-gui.iso`](volatilis-gui.iso) | Standalone graphical desktop | 44 MB |
-| [`volatilis-cli.iso`](volatilis-cli.iso) | Standalone text-first edition | 10 MB |
-| [`volatilis-master.iso.zip`](volatilis-master.iso.zip) | Both editions with a GRUB selection menu and installer paths; **unzip before booting** | 67 MB ZIP, about 129 MB uncompressed |
+| [`volatilis-gui.iso`](volatilis-gui.iso) | Standalone graphical desktop | 50 MB |
+| [`volatilis-cli.iso`](volatilis-cli.iso) | Standalone text-first edition | 14 MB |
+| [`volatilis-master.iso.zip`](volatilis-master.iso.zip) | Both editions with graphical and command-line installation choices; **unzip before booting** | 76 MB ZIP, about 146 MB uncompressed |
 
-**SHA-256 checksums** (calculated for the 22 November 2026 build):
+**SHA-256 checksums** (calculated for the 24 November 2026 build):
 
 ```text
-e90215a62118e2f80609417321dab4c6d7bc9420b25bcf53a86badfa8c254ba1  volatilis-gui.iso
-3bc47ce8d31c2287ff71f25213696e10da0bb87c6a137e53301b690aed4fedaa  volatilis-cli.iso
-f493451019d2b4c8ceb29435f6de37d1c9de979b278735a4cae972cf7504fef0  volatilis-master.iso.zip
-e67af851d975d0b44abb51cedc1c58f9063f143774404d173cf8180313da24e2  volatilis.iso (inside ZIP)
+e9fa4c3a9adf76bc0c8fdfdc0edc54034991fc9731e93c4e8a8ba265b3bc5f02  volatilis-gui.iso
+876b32699a01517cb2f377dbf773f4708ed1bdbf6a28e78ccf31ac24638c192a  volatilis-cli.iso
+78e9e014cc35fae4aa53b80f150db0018c46707f4b6d02df908ca0383442d62a  volatilis-master.iso.zip
+fb173047c58080f2a1bd060efea458b7c246b6df13a92caed5f4f02d23e5385b  volatilis.iso (inside ZIP)
 ```
 
 To calculate a downloaded file's checksum, use `sha256sum <filename>` on Linux or `shasum -a 256 <filename>` on macOS and compare it with the corresponding published value. A checksum is **not** a digital signature.
 
 **Older release:** VolatilisOS 2.1 (without the newer installer flow) is archived on the [`version-2.1` branch](https://github.com/chanatun-volatilis/VolatilisOS/tree/version-2.1).
 
-## What's new in the 22 November 2026 build
+## What's new in the 24 November 2026 build
 
-This rebuild of the 2.2 Beta ISOs brings in the newest work from the source repository:
+This verified rebuild of the 2.2 Beta ISOs brings in the newest work from the source repository:
+
+- **Command-line installation mode.** The boot menu now offers graphical or keyboard-only installation. The text installer can also be opened with `vos-install --cli`; guided and advanced flows reuse the same checked installer backend, target protection, write fences and installed-system verification. See [CLI installer](docs/CLI_INSTALLER.md).
+- **Installed-boot pointer recovery.** The kernel re-synchronizes the PS/2/Synaptics path after firmware USB ownership is released and native EHCI/xHCI initialization completes. This addresses laptops where an external USB mouse left the trackpad out of phase, and where both pointers appeared dead after installation.
+- **Five selectable icon themes.** MOD7 is the factory default, with Vista, Modern VOS, Native and Android choices in Settings. Desktop, application, folder, storage and file-type icons use the same theme manager. Editable source/document formats share the ordinary text-document icon.
+- **Host build portability.** Linux and macOS use the existing Make pipeline. Windows hosts use the documented WSL 2 PowerShell bridge so the same GNU cross-toolchain, GRUB and xorriso build runs rather than an incompatible MSVC build.
 
 - **Clean, factory-fresh discs.** The ISOs no longer carry any of the creator's own settings, accounts or files. Every disc now boots into factory settings, and the build refuses to finish if any personal state slips onto the disc.
 - **USB mouse fix on older laptops.** VolatilisOS can now drive **EHCI (USB 2.0)** controllers and **USB hubs**, so a USB mouse that sits behind a hub works. Combined keyboard-and-mouse wireless receivers now have both halves (keyboard *and* mouse) working.
@@ -55,7 +60,7 @@ This rebuild of the 2.2 Beta ISOs brings in the newest work from the source repo
 - **New "3D buttons" setting.** An optional setting gives buttons a keyboard-key look with a short press animation. It is off by default.
 - **Read-only `.iso` support.** VolatilisOS can now open ISO 9660 disc images (`.iso` files) and browse the files inside them. This is **read-only**: you can look at and copy files out, but not change the image.
 
-Still experimental: please keep testing in a virtual machine, as described below.
+The uploaded images passed package, dual-kernel, smoke, ISO-menu and installed-disk QEMU verification. They remain experimental: please begin in a virtual machine, as described below.
 
 ## Run it safely
 
@@ -136,4 +141,4 @@ The old single-file `src/desktop.c`-style source layout is outdated. Current cod
 
 ## Copyright and licensing
 
-The source repository states **Copyright (C) 2025–2026 Chanatun Volatilis Poolcharuansin. All rights reserved.** This public repository has no root `LICENSE` file as of this documentation update. **Do not assume the VolatilisOS source is MIT-licensed or freely redistributable.** Third-party ports, fonts, tools and packaged assets have their own license terms; consult their notices. Being able to download an ISO is not a blanket license to redistribute its constituent code.
+The source repository states **Copyright (C) 2025–2026 Chanatun Volatilis Poolcharuansin. All rights reserved.** This public repository has no root `LICENSE` file as of this documentation update. **Do not assume the VolatilisOS source is MIT-licensed or freely redistributable.** Third-party ports, fonts, tools and packaged assets have their own license terms; consult their notices. The selectable Vista and MOD7 themes are derivatives of user-supplied Windows icon archives that arrived without an open-source licence or redistribution notice. They are identified for provenance and are not claimed as original VolatilisOS artwork. Being able to download an ISO is not a blanket licence to redistribute its constituent code or artwork.

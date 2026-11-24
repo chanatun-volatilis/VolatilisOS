@@ -6,9 +6,9 @@ screenshots, published checksums and the newest public documentation, start
 with README.md in this repository.
 
 Release line: VolatilisOS 2.2 Beta, "Navy Horizon"
-ISO build: 22 November 2026, from source-code main at
-34ee203abceef20a25a5e45f52ed1ae16f2500e1. See README.md, section
-"What's new in the 22 November 2026 build".
+ISO build: 24 November 2026, from source-code main at
+549e6d454157675664eeb416975f50d8742b29f4. See README.md, section
+"What's new in the 24 November 2026 build".
 
 NOTE: The downloadable ISO here is an uploaded snapshot. The source tree is
 developed separately and can be newer than the uploaded binary.
@@ -51,6 +51,12 @@ What changed since older GUI documentation
   external filesystem formats are read-only by design.
 - The GUI is not completely self-contained: third-party ports, packages,
   fonts and other dependencies retain their respective upstream licenses.
+- The master menu offers graphical and keyboard-only installation. The CLI
+  frontend is also available as "vos-install --cli" and uses the established
+  checked installer backend.
+- MOD7 is the factory icon default. Vista, Modern VOS, Native and Android
+  themes are selectable in Settings. The imported Windows-derived themes are
+  identified as third-party artwork, not original VolatilisOS artwork.
 
 Safety and compatibility
 ------------------------
@@ -109,6 +115,7 @@ Current public documentation
     docs/ARCHITECTURE.md         current kernel, services and source structure
     docs/BUILD_AND_TEST.md       build requirements and verification workflows
     docs/RELEASE_AND_SAFETY.md  ISO verification and safe trial guidelines
+    docs/CLI_INSTALLER.md       command-line installation and safety boundary
 
 Copyright and licensing
 -----------------------
@@ -120,6 +127,8 @@ The source repository states:
 
 Do not assume MIT licensing. Public downloads are not a license grant for
 the underlying source; dependencies and third-party ports have their own
-license terms.
+license terms. The Vista and MOD7 icon archives arrived without an open
+redistribution licence; download availability is not permission to extract or
+redistribute their artwork separately.
 
 For the current overview and project links, see README.md.

@@ -1,11 +1,11 @@
 # VolatilisOS development status
 
-**Status snapshot:** 21 November 2026  
-**Release line:** VolatilisOS **2.2 Beta — “Navy Horizon”**  
-**Source reference:** `chanatun-volatilis/VolatilisOS-source-code` `main` at `9b69ff2ba24901ed98d040f205882a7d3fd5868c`  
-**Scope:** A documentation review of the source and its test/release notes, **not** a fresh build, VM run, or physical-hardware certification.
+**Status snapshot:** 24 November 2026
+**Release line:** VolatilisOS **2.2 Beta — “Navy Horizon”**
+**Source reference:** `chanatun-volatilis/VolatilisOS-source-code` `main` at `549e6d454157675664eeb416975f50d8742b29f4`
+**Scope:** Fresh source build plus host and QEMU verification for the uploaded images; **not** physical-hardware certification.
 
-> **Published ISOs:** the GUI, CLI and master ISOs in this repository were rebuilt on 22 November 2026 from source commit `34ee203abceef20a25a5e45f52ed1ae16f2500e1` and boot to the desktop / shell in QEMU. The table below was written against the slightly older `9b69ff2` review, plus the additions listed in the [README](../README.md#whats-new-in-the-22-november-2026-build).
+> **Published ISOs:** the GUI, CLI and master ISOs in this repository were rebuilt on 24 November 2026 from source commit `549e6d454157675664eeb416975f50d8742b29f4`. The exact master image booted its GUI, CLI and command-line installer menu entries in QEMU; both standalone editions also passed framebuffer smoke checks.
 
 > **Important distinction:** This public repository distributes prebuilt ISO files and screenshots. The separately maintained source repository is currently private. Its development status can move ahead of the prebuilt ISOs here. A capability described below is **not automatically guaranteed** to be present in the binary downloads; rebuild or verify the particular artifact to establish that.
 
@@ -18,15 +18,16 @@
 | CLI | Text-first shell, commands, storage and recovery tooling | Different kernel from the GUI edition; not merely a launch option within one shared kernel |
 | Storage | VFS, VLFS2, FAT16/FAT32 read/write, partition discovery and block-device layer | VLFS2 newly installed volumes may lack a journal until enabled; use throwaway disks for testing |
 | Filesystem readers | ext2/3/4, exFAT, NTFS and ISO 9660 (`.iso` images) read-only paths | Do **not** rely on write support; filesystem and file-size limits apply |
-| Disk interfaces | IDE/ATA, AHCI, NVMe, USB xHCI Bulk-Only mass storage and removable-media compatibility |
-| USB input | USB keyboards and mice on xHCI and EHCI (USB 2.0) controllers, including devices behind USB hubs and combined keyboard-and-mouse receivers | Real-laptop coverage is limited; some controllers and receivers may still not work | Coverage is hardware-specific; QEMU verification does not certify real controllers |
-| Install and recovery | BIOS installed-disk flow, GUI Setup and CLI installer, disk checks, two-edition boot, file persistence in QEMU | **Not certified safe for real-user disks**; UEFI installation is gated off |
+| Disk interfaces | IDE/ATA, AHCI, NVMe, USB xHCI Bulk-Only mass storage and removable-media compatibility | Device support and capacity limits are driver-specific |
+| USB input | USB keyboards and mice on xHCI and EHCI (USB 2.0), PS/2 mice and Synaptics packet handling; post-USB i8042 resynchronization protects installed boots | Real-laptop coverage is limited; UHCI/OHCI and unusual receivers may still need firmware compatibility paths |
+| Install and recovery | BIOS installed-disk flow, GUI Setup, `vos-install --cli`, MBR/GPT inspection, alongside/erase plans, checks and boot repair | **Not certified safe for real-user disks**; UEFI installation is gated off |
 | UEFI | IA32 and x64 UEFI live-boot paths have OVMF/QEMU evidence | UEFI **installation** unavailable; Secure Boot not supported |
 | Networking | IPv4/IPv6, ARP, DHCP, DNS, TCP/UDP, socket and TLS implementations; multiple Ethernet drivers | Networking features are incremental; no claim of support for arbitrary physical NICs |
 | Wi-Fi | Network manager, UI, security groundwork and early chipset-driver work | **Cannot currently scan/join Wi-Fi networks with the implemented hardware support** |
 | Applications | Built-in editor/system tools; package-supported NetSurf browser; DoomGeneric/Freedoom and other ports | Port packaging, device support and runtime completeness vary; Doom audio and saves remain open |
-| Development tooling | VScript compiler/interpreter, C/C++ components, native SDK, VPK packages, third-party port recipes | Not full compatibility with desktop Linux apps or their dependencies |
-| Testing | Host check matrix, QEMU boot/installed-media checks, failure injection, release evidence tools | Tests are not re-run by this page; current checkout must produce its own results |
+| Appearance | MOD7 default plus Vista, Modern VOS, Native and Android icon themes; shared desktop/application/file icon routing | Vista and MOD7 derive from user-supplied Windows artwork with no supplied open licence; see the release notice |
+| Development tooling | VScript compiler/interpreter, C/C++ components, native SDK, VPK packages, third-party port recipes; Linux/macOS Make builds and a Windows WSL 2 bridge | Not full compatibility with desktop Linux apps or their dependencies; native MSVC builds are unsupported |
+| Testing | Host core/package/icon/render checks; QEMU smoke, ISO-menu, installed-input and eight-scenario installed-disk verification run for this upload | QEMU evidence is not physical-hardware certification |
 
 ## Boot and release readiness
 
@@ -38,7 +39,7 @@ The source release gate reports one of:
 - **PRERELEASE (VM ONLY):** required checks pass but physical hardware certification is missing or gated hardware issues remain;
 - **RELEASE CANDIDATE:** required checks and real-machine preflight evidence exist, with no remaining hardware-gated defects.
 
-This document does **not** state that the current public ISO has passed all those checks. No fresh release-gate report was generated during this update.
+For this upload, the required core, package, dual-kernel and smoke targets passed; ISO verification passed four scenarios, and installed-disk verification passed eight scenarios including persistence, GPT-neighbour preservation, repair, backup-kernel boot and non-target disk protection. A formal physical-hardware release-candidate claim is still not made.
 
 ## Important known limitations from the source release ledger
 
@@ -47,7 +48,7 @@ This document does **not** state that the current public ISO has passed all thos
 - **RG-5:** A GPT disk extending beyond driver reachability can be reported as invalid rather than partly inaccessible; the installer refuses unsafe use.
 - **RG-6:** Read-only NVMe devices may be presented as writable before the write is rejected.
 - **RG-12:** The GUI's removable-file size display can show a negative size for files of 2 GiB or more.
-- **RG-17:** A real-machine BIOS installed-boot reset remained under investigation after stage-2 loader fixes, pending a new physical retest.
+- **Physical retest still required:** QEMU now proves independent BIOS installed boot and post-install pointer movement/clicks, but the reported HP ProBook trackpad/mouse case still needs a new real-machine retest.
 
 These are **documented source-development issues**, not a claim that each is reproducible in the public prebuilt ISO files. No defect is considered fixed just because a patch prompt exists.
 
