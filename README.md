@@ -131,14 +131,10 @@ These pictures show GUI builds and desktop applications. Screenshots may represe
 
 These are development screenshots supplied by the project creator. They are not a certification of a specific downloadable ISO.
 
-![Freedoom running in a native VOS window with System Monitor, Calendar and Clock](screenshots/freedoom-desktop-system-monitor.png)
-*Native DoomGeneric/Freedoom alongside the desktop utilities.*
-
-![VolatilisOS Setup and cascading folder menus](screenshots/setup-and-cascading-folder-menu.png)
-*Windowed Setup and hierarchical desktop file navigation.*
-
-![Freedoom difficulty selection and cascading desktop menus](screenshots/freedoom-skill-selection-and-folder-menu.png)
-*Freedoom difficulty selection in a movable desktop window.*
+| | |
+| --- | --- |
+| ![Freedoom running with System Monitor, Calendar and Clock](screenshots/freedoom-desktop-system-monitor.png) Native DoomGeneric/Freedoom and desktop utilities | ![VolatilisOS Setup and cascading folder menus](screenshots/setup-and-cascading-folder-menu.png) Windowed Setup and hierarchical file navigation |
+| ![Freedoom difficulty selection and cascading desktop menus](screenshots/freedoom-skill-selection-and-folder-menu.png) Freedoom in a movable desktop window | |
 
 <!-- END VOS NOVEMBER 24 DEMOS -->
 
