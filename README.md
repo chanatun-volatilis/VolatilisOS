@@ -126,6 +126,22 @@ Automatic VM window resizing is not claimed as implemented.
 
 These pictures show GUI builds and desktop applications. Screenshots may represent a different development snapshot from the published ISO and are not evidence that every feature is present in that download.
 
+<!-- BEGIN VOS NOVEMBER 24 DEMOS -->
+### November 24, 2026 — desktop and native software demos
+
+These are development screenshots supplied by the project creator. They are not a certification of a specific downloadable ISO.
+
+![Freedoom running in a native VOS window with System Monitor, Calendar and Clock](screenshots/freedoom-desktop-system-monitor.png)
+*Native DoomGeneric/Freedoom alongside the desktop utilities.*
+
+![VolatilisOS Setup and cascading folder menus](screenshots/setup-and-cascading-folder-menu.png)
+*Windowed Setup and hierarchical desktop file navigation.*
+
+![Freedoom difficulty selection and cascading desktop menus](screenshots/freedoom-skill-selection-and-folder-menu.png)
+*Freedoom difficulty selection in a movable desktop window.*
+
+<!-- END VOS NOVEMBER 24 DEMOS -->
+
 ### Desktop and menus
 
 | | |
