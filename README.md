@@ -123,22 +123,30 @@ Automatic VM window resizing is not claimed as implemented.
 
 These pictures show GUI builds and desktop applications. Screenshots may represent a different development snapshot from the published ISO and are not evidence that every feature is present in that download.
 
-### 25–27 November 2026 development gallery
+### 25–27 November 2026 development screenshots
 
-[View all seven supplied screenshots with captions and full-size links](docs/SCREENSHOTS_2026-11.md). These images show the desktop menus, Settings, All Apps, NetSurf, and system utilities. The Settings capture includes a visible save error, and the All Apps capture includes duplicate entries; both are presented as development evidence.
+All seven supplied screenshots appear below. They show development builds, not necessarily the [published ISO](#download--22-beta-navy-horizon). The Settings image shows a save error; the All Apps image shows duplicate entries. NetSurf is displaying its local welcome page, not proof of a live website load.
 
 <table>
   <tr>
-    <td width="50%" align="center" valign="top">
-      <a href="screenshots/2026-11-27-desktop-app-menu.png"><img src="screenshots/2026-11-27-desktop-app-menu.png" alt="Desktop with cascading application menus and system widgets" width="400"></a><br>
-      Desktop and application menus
-    </td>
-    <td width="50%" align="center" valign="top">
-      <a href="screenshots/2026-11-26-netsurf.png"><img src="screenshots/2026-11-26-netsurf.png" alt="NetSurf rendering its local welcome page" width="400"></a><br>
-      NetSurf in a desktop window
-    </td>
+    <td width="50%" align="center" valign="top"><a href="screenshots/2026-11-27-desktop-app-menu.png"><img src="screenshots/2026-11-27-desktop-app-menu.png" alt="Desktop with cascading application menus and system widgets" width="400"></a><br>Desktop and cascading application menus</td>
+    <td width="50%" align="center" valign="top"><a href="screenshots/2026-11-27-settings-overview.png"><img src="screenshots/2026-11-27-settings-overview.png" alt="Settings overview with a visible Could not save settings error" width="400"></a><br>Settings overview (save error visible)</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top"><a href="screenshots/2026-11-27-files-netsurf-folder-menu.png"><img src="screenshots/2026-11-27-files-netsurf-folder-menu.png" alt="Desktop context menu browsing the NetSurf folder" width="400"></a><br>Desktop folder browsing and NetSurf files</td>
+    <td width="50%" align="center" valign="top"><a href="screenshots/2026-11-27-system-menu.png"><img src="screenshots/2026-11-27-system-menu.png" alt="Desktop system application menu and widgets" width="400"></a><br>System application menu</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top"><a href="screenshots/2026-11-26-all-apps.png"><img src="screenshots/2026-11-26-all-apps.png" alt="All Apps window with installed applications and visible duplicate entries" width="400"></a><br>All Apps (duplicate entries visible)</td>
+    <td width="50%" align="center" valign="top"><a href="screenshots/2026-11-26-netsurf.png"><img src="screenshots/2026-11-26-netsurf.png" alt="NetSurf rendering its local welcome page in a desktop window" width="400"></a><br>NetSurf local welcome page</td>
+  </tr>
+  <tr>
+    <td width="50%" align="center" valign="top"><a href="screenshots/2026-11-25-clock-calendar-system-monitor.png"><img src="screenshots/2026-11-25-clock-calendar-system-monitor.png" alt="Clock Calendar and System Monitor windows on the desktop" width="400"></a><br>Clock, Calendar, and System Monitor</td>
+    <td width="50%"></td>
   </tr>
 </table>
+
+[Captions and full-size image list](docs/SCREENSHOTS_2026-11.md).
 
 <!-- BEGIN VOS NOVEMBER 24 DEMOS -->
 ### November 24, 2026 — desktop and native software demos
