@@ -123,6 +123,23 @@ Automatic VM window resizing is not claimed as implemented.
 
 These pictures show GUI builds and desktop applications. Screenshots may represent a different development snapshot from the published ISO and are not evidence that every feature is present in that download.
 
+### 25–27 November 2026 development gallery
+
+[View all seven supplied screenshots with captions and full-size links](docs/SCREENSHOTS_2026-11.md). These images show the desktop menus, Settings, All Apps, NetSurf, and system utilities. The Settings capture includes a visible save error, and the All Apps capture includes duplicate entries; both are presented as development evidence.
+
+<table>
+  <tr>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/2026-11-27-desktop-app-menu.png"><img src="screenshots/2026-11-27-desktop-app-menu.png" alt="Desktop with cascading application menus and system widgets" width="400"></a><br>
+      Desktop and application menus
+    </td>
+    <td width="50%" align="center" valign="top">
+      <a href="screenshots/2026-11-26-netsurf.png"><img src="screenshots/2026-11-26-netsurf.png" alt="NetSurf rendering its local welcome page" width="400"></a><br>
+      NetSurf in a desktop window
+    </td>
+  </tr>
+</table>
+
 <!-- BEGIN VOS NOVEMBER 24 DEMOS -->
 ### November 24, 2026 — desktop and native software demos
 
